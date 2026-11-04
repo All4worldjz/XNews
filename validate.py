@@ -8,7 +8,7 @@ import sys
 from urllib.parse import urlsplit
 
 ROOT = pathlib.Path(__file__).resolve().parent
-VERIFICATIONS = {'verified', 'x-mirror', 'official-source', 'official-source-sample'}
+VERIFICATIONS = {'syndicated-source', 'verified', 'x-mirror', 'official-source', 'official-source-sample'}
 
 def require(value, message):
     if not value: raise ValueError(message)
@@ -47,20 +47,31 @@ def validate_data(data):
             require(verification in VERIFICATIONS, 'Unknown verification state')
             require(item.get('sources'), 'Sources are required')
             for source in item['sources']: require(https(source['url']) and source.get('label'), 'Invalid source')
-            if verification in {'verified', 'x-mirror'}:
+            if verification in {'verified', 'x-mirror', 'syndicated-source'}:
                 url = urlsplit(item.get('xPostUrl') or '')
                 require(https(item.get('xPostUrl')) and url.hostname in {'x.com','www.x.com','twitter.com','www.twitter.com'} and re.fullmatch(r'/[A-Za-z0-9_]+/status/[0-9]+/?', url.path), 'Invalid X permalink')
                 require(item.get('verifiedAt') and item.get('sourcePublishedDate'), 'X evidence needs timestamp and source date')
+                if verification == 'syndicated-source': require(any(s.get('type') == 'republication' for s in item['sources']), 'Republication source must be disclosed')
                 if verification == 'x-mirror': require(any(s.get('type') == 'mirror' for s in item['sources']), 'Mirror source must be disclosed')
             else:
                 require(item.get('xPostUrl') is None, 'Official-only item cannot imply X verification')
+            if 'article' in item:
+                article = item['article']
+                require(isinstance(article, dict), 'Article must be an object')
+                sections = article.get('sections')
+                require(isinstance(sections, list) and sections, 'Article needs sections')
+                for section in sections:
+                    require(isinstance(section, dict) and isinstance(section.get('heading'), str) and section['heading'].strip(), 'Article section needs heading')
+                    paragraphs = section.get('paragraphs')
+                    require(isinstance(paragraphs, list) and paragraphs and all(isinstance(p, str) and p.strip() for p in paragraphs), 'Article paragraphs must be nonempty text')
             require(item.get('engagement') is None, 'Engagement publishing awaits validated measurement pipeline')
     return data
 
 def main():
     data = validate_data(json.loads((ROOT / 'data/issues.json').read_text()))
-    for name in ['app.js', 'style.css', 'index.html', '.nojekyll']: require((ROOT / name).exists(), f'Missing {name}')
+    for name in ['app.js', 'style.css', 'article.css', 'index.html', '.nojekyll']: require((ROOT / name).exists(), f'Missing {name}')
     subprocess.run([sys.executable, str(ROOT / 'scripts/build_feed.py'), '--check'], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'scripts/build_articles.py'), '--check'], check=True)
     print(f'PASS: {len(data["issues"])} issue(s), schema, dates, evidence labels, static files and RSS')
 
 if __name__ == '__main__': main()

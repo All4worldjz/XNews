@@ -27,3 +27,9 @@ class ValidationTests(unittest.TestCase):
         d['issues'][0]['status'] = 'published'
         d['issues'][0].pop('trends', None)
         with self.assertRaises(ValueError): validate_data(d)
+    def test_syndicated_source_requires_republication_evidence(self):
+        d=copy.deepcopy(self.data);item=d['issues'][0]['items'][0];item['verification']='syndicated-source'
+        item['sources'].append({'label':'Signed republication','url':'https://example.org/article','type':'republication'})
+        validate_data(d)
+        item['sources']=[s for s in item['sources'] if s['type']!='republication']
+        with self.assertRaises(ValueError):validate_data(d)

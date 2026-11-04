@@ -25,7 +25,7 @@ def description(issue, item):
     paragraphs = []
     if issue.get('status') == 'sample' or item.get('verification') == 'official-source-sample':
         paragraphs.append('官方来源样例 · 非 X 热榜；不代表完整每日简报。')
-    labels = {'verified': 'X 原帖已核验', 'x-mirror': 'X 镜像记录 · 原帖未直连核验', 'official-source': '官方来源 · 非 X 原帖'}
+    labels = {'syndicated-source': '署名转载与官方资料 · X 原帖未直连核验', 'verified': 'X 原帖已核验', 'x-mirror': 'X 镜像记录 · 原帖未直连核验', 'official-source': '官方来源 · 非 X 原帖'}
     if item.get('verification') in labels: paragraphs.append(labels[item['verification']])
     paragraphs.extend([issue['coverage'], item['summary'], item['whyItMatters'], item['caveat'],
                        f"简报发布日期：{issue['date']}（UTC，日期精度）",
@@ -40,10 +40,15 @@ def description(issue, item):
         content += f'<p>来源：<a href="{escape(url, quote=True)}">{escape(source["label"])}</a></p>'
     x_url = item.get('xPostUrl')
     if x_url and urlsplit(x_url).scheme == 'https' and urlsplit(x_url).netloc:
-        label = 'X 原帖链接（由镜像提供，未直连核验）' if item.get('verification') == 'x-mirror' else '查看 X 原帖'
+        label = 'X 原帖链接（未直连核验）' if item.get('verification') in {'x-mirror', 'syndicated-source'} else '查看 X 原帖'
         content += f'<p><a href="{escape(x_url, quote=True)}">{label}</a> · 互动数据：未获取</p>'
     else:
         content += '<p>X 原帖：未核验 · 互动数据：未获取</p>'
+    if item.get('article'):
+        content += f'<p><a href="{SITE}articles/{issue["date"]}-{quote(item["id"], safe="")}.html">阅读全文</a></p>'
+        for section in item['article']['sections']:
+            content += f'<h2>{escape(section["heading"])}</h2>'
+            content += ''.join(f'<p>{escape(p)}</p>' for p in section['paragraphs'])
     return content
 
 
