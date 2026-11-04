@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>XNews · AI 科技简报</title>
+    <link>https://all4worldjz.github.io/XNews/</link>
+    <description>XNews 编辑简报。当前为预览样例，非 X 热榜；来源日期与简报发布日期分别标注。</description>
+    <language>zh-CN</language>
+    <atom:link href="https://all4worldjz.github.io/XNews/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Snowflake Cortex AI Gateway：推理、可观测性与成本管理正式可用</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-04#cortex-ai-gateway-ga</link>
+      <description>&lt;p&gt;官方来源样例 · 非 X 热榜；不代表完整每日简报。&lt;/p&gt;&lt;p&gt;本期仅展示 1 条官方来源样例；尚未核验近期 X 原帖。不构成 X 热门榜或完整的每日简报。&lt;/p&gt;&lt;p&gt;Snowflake 发布说明宣布，这三项能力已正式可用。AI 客户端可以通过统一受治理的入口访问模型，并记录请求轨迹、按用户归属成本。&lt;/p&gt;&lt;p&gt;编辑解读：对需要管理多个 AI 应用的团队，统一观察调用与费用有助于减少运维分散。具体收益仍需结合实际工作负载评估。&lt;/p&gt;&lt;p&gt;Trace analytics 与 Tools for Cortex AI Gateway 仍为预览功能，不应与上述正式可用能力混淆。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-04（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-03&lt;/p&gt;&lt;p&gt;事件日期：2026-11-03&lt;/p&gt;&lt;p&gt;核验时间：2026-11-04T03:26:00Z&lt;/p&gt;&lt;p&gt;来源：&lt;a href="https://docs.snowflake.com/en/release-notes/2026/other/2026-11-03-cortex-ai-gateway-ga"&gt;Snowflake 官方发布说明&lt;/a&gt;&lt;/p&gt;&lt;p&gt;X 原帖：未核验 · 互动数据：未获取&lt;/p&gt;</description>
+      <category>开发工具</category>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-04#cortex-ai-gateway-ga</guid>
+    </item>
+  </channel>
+</rss>

@@ -30,3 +30,5 @@ for filename in ['app.js','style.css','index.html','.nojekyll']:
     assert (root/filename).exists()
 assert not (root/'.github/workflows').exists()
 print(f'PASS: {len(d["issues"])} issue(s), schema, dates, links, labels, static files, no workflows')
+import subprocess, sys
+subprocess.run([sys.executable, str(root / 'scripts/build_feed.py'), '--check'], check=True)

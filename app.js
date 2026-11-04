@@ -27,5 +27,17 @@
   $('search').addEventListener('input', () => data && render());
   $('category').addEventListener('change', () => data && render());
   window.addEventListener('popstate', () => { selected = new URLSearchParams(location.search).get('date'); if (data) render(); });
-  fetch('./data/issues.json').then(r => { if (!r.ok) throw new Error('读取失败'); return r.json(); }).then(value => { if (!Array.isArray(value.issues)) throw new Error('数据格式错误'); data = value; selected = new URLSearchParams(location.search).get('date'); render(); }).catch(() => { $('result-count').textContent = '内容暂时无法读取'; $('articles').innerHTML = '<p class="empty">未能加载日报数据。请通过本地 HTTP 预览打开，或稍后刷新重试。</p>'; });
+  fetch('./data/issues.json').then(r => { if (!r.ok) throw new Error('读取失败'); return r.json(); }).then(value => { if (!Array.isArray(value.issues)) throw new Error('数据格式错误'); data = value; selected = new URLSearchParams(location.search).get('date'); render(); if (location.hash) { const target = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) target.scrollIntoView(); } }).catch(() => { $('result-count').textContent = '内容暂时无法读取'; $('articles').innerHTML = '<p class="empty">未能加载日报数据。请通过本地 HTTP 预览打开，或稍后刷新重试。</p>'; });
 })();
+
+// A normal feed link remains available when clipboard permission is unavailable.
+document.getElementById('copy-feed').addEventListener('click', async () => {
+  const url = new URL('./feed.xml', location.href).href;
+  const status = document.getElementById('copy-status');
+  try {
+    await navigator.clipboard.writeText(url);
+    status.textContent = '已复制。将地址粘贴到你的 RSS 阅读器即可订阅。';
+  } catch {
+    status.textContent = '订阅地址：' + url;
+  }
+});
