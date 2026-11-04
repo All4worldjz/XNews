@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "mode": "preview",
+  "timezone": "UTC",
+  "issues": [{
+    "date": "2026-11-04",
+    "title": "把信息流，变成值得读的新闻。",
+    "status": "sample",
+    "coverage": "本期仅展示 1 条官方来源样例；尚未核验近期 X 原帖。不构成 X 热门榜或完整的每日简报。",
+    "items": [{
+      "id": "cortex-ai-gateway-ga",
+      "category": "开发工具",
+      "title": "Snowflake Cortex AI Gateway：推理、可观测性与成本管理正式可用",
+      "summary": "Snowflake 发布说明宣布，这三项能力已正式可用。AI 客户端可以通过统一受治理的入口访问模型，并记录请求轨迹、按用户归属成本。",
+      "whyItMatters": "编辑解读：对需要管理多个 AI 应用的团队，统一观察调用与费用有助于减少运维分散。具体收益仍需结合实际工作负载评估。",
+      "caveat": "Trace analytics 与 Tools for Cortex AI Gateway 仍为预览功能，不应与上述正式可用能力混淆。",
+      "sourcePublishedDate": "2026-11-03",
+      "eventDate": "2026-11-03",
+      "verifiedAt": "2026-11-04T03:26:00Z",
+      "verification": "official-source-sample",
+      "xPostUrl": null,
+      "engagement": null,
+      "sources": [{"label": "Snowflake 官方发布说明", "url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-11-03-cortex-ai-gateway-ga", "type": "official"}]
+    }]
+  }]
+}
