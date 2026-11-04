@@ -25,6 +25,8 @@ def description(issue, item):
     paragraphs = []
     if issue.get('status') == 'sample' or item.get('verification') == 'official-source-sample':
         paragraphs.append('官方来源样例 · 非 X 热榜；不代表完整每日简报。')
+    labels = {'verified': 'X 原帖已核验', 'x-mirror': 'X 镜像记录 · 原帖未直连核验', 'official-source': '官方来源 · 非 X 原帖'}
+    if item.get('verification') in labels: paragraphs.append(labels[item['verification']])
     paragraphs.extend([issue['coverage'], item['summary'], item['whyItMatters'], item['caveat'],
                        f"简报发布日期：{issue['date']}（UTC，日期精度）",
                        f"来源发布日期：{item.get('sourcePublishedDate') or '未确认'}",
@@ -38,7 +40,8 @@ def description(issue, item):
         content += f'<p>来源：<a href="{escape(url, quote=True)}">{escape(source["label"])}</a></p>'
     x_url = item.get('xPostUrl')
     if x_url and urlsplit(x_url).scheme == 'https' and urlsplit(x_url).netloc:
-        content += f'<p><a href="{escape(x_url, quote=True)}">查看 X 原帖</a></p>'
+        label = 'X 原帖链接（由镜像提供，未直连核验）' if item.get('verification') == 'x-mirror' else '查看 X 原帖'
+        content += f'<p><a href="{escape(x_url, quote=True)}">{label}</a> · 互动数据：未获取</p>'
     else:
         content += '<p>X 原帖：未核验 · 互动数据：未获取</p>'
     return content
@@ -50,7 +53,7 @@ def build_feed(data):
     rss = ET.Element('rss', {'version': '2.0'})
     channel = ET.SubElement(rss, 'channel')
     for tag, value in [('title', 'XNews · AI 科技简报'), ('link', SITE),
-                       ('description', 'XNews 编辑简报。当前为预览样例，非 X 热榜；来源日期与简报发布日期分别标注。'),
+                       ('description', 'XNews 编辑精选，非 X 全站热榜。区分 X 原帖核验、镜像线索与官方来源；来源日期与简报日期分别标注。'),
                        ('language', 'zh-CN')]:
         ET.SubElement(channel, tag).text = value
     ET.SubElement(channel, f'{{{ATOM}}}link', {'href': SITE + 'feed.xml', 'rel': 'self', 'type': 'application/rss+xml'})

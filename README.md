@@ -1,30 +1,35 @@
-# XNews 测试预览
+# XNews · AI 与 Enterprise Agentic AI 编辑简报
 
-纯静态 HTML/CSS/JavaScript 网站。当前仅为版式与发布测试，展示一条明确标记的官方来源样例，不是 X 热门日报；没有已核验 X 原帖或互动指标。
+纯静态 HTML/CSS/JavaScript 网站。来源明确区分直接核验 X 原帖、公开镜像线索及官方来源。编辑顺序不是平台热度排名。不能编造原帖、互动量、涨速或覆盖范围。
 
-每日采集与自动发布尚未启用，待用户验收。页面保留 noindex。
+## 本期与覆盖
 
-本地预览：python3 -m http.server 8080
+2026-11-04 正式发布：10 条公开镜像内容编辑精选，包含新闻、技术分享和计划推广；另保留已发布的 1 条官方来源样例与原有 RSS GUID。真实 X 原帖直连核验数为 0。文章逐条显示证据、日期依据与限制。热点涨速 Top 10 当前不可用，不以编辑精选替代。
 
-检查：node --check app.js && python3 validate.py
+监控关键词包括 AI、Enterprise Agentic AI、企业智能体、Agent 安全、模型与研究。连续观测和自动采集尚未在仓库内实现；定时任务状态以任务配置为准，页面不承诺已运行的自动采集。
 
-数据位于 data/issues.json；历史期数可保留归档。不得编造 X 原帖、互动数或覆盖范围。
+## 本地预览与验证
 
-## RSS 订阅
+运行 `python3 -m http.server 8080` 后打开本地页面。
 
-订阅地址：https://all4worldjz.github.io/XNews/feed.xml
-
-RSS 2.0 来自同一份 `data/issues.json`，包含归档各期的全部条目。每条链接携带期数 `?date=YYYY-MM-DD` 和文章 `#id`，GUID 由期数与文章 ID 构成，重建不变，同 ID 在不同期数为独立条目。请不要修改已发布条目的日期或 ID。
-
-当前订阅内容也是明确标记的官方来源样例，非 X 热榜。RSS `pubDate` 使用简报日期的 UTC 00:00（日期精度，不代表实际发稿时刻）；正文分别保留来源发布日期、事件日期、核验时间及来源链接。`lastBuildDate` 同样使用最新一期的日期，构建不注入当前时间，保证结果可重复。
-
-手工更新数据后、发布前执行：
+发布前运行：
 
 ```sh
 python3 scripts/build_feed.py
 python3 scripts/build_feed.py --check
-python3 -m unittest discover -s tests -p 'test_rss.py'
-node --check app.js && python3 validate.py
+python3 -m unittest discover -s tests
+node --check app.js
+python3 validate.py
 ```
 
-必须一并提交更新后的 `data/issues.json` 与 `feed.xml`。`--check` 与 RSS 测试会拒绝过期或缺失的 feed；测试也验证真实数据链接、日期、样例标记、HTML/XML 转义和跨期 GUID。生成器只写本地静态文件，不联网、不发布。未增加工作流，自动采集与定时发布继续关闭。
+## 数据与 RSS 一致性
+
+订阅地址：https://all4worldjz.github.io/XNews/feed.xml
+
+`data/issues.json` 是网站和 RSS 的唯一来源。必须一起提交数据与生成的 feed.xml，RSS 检查拒绝过期内容。GUID 按日期和文章 ID 构成；不要更改已发布条目的日期或 ID。RSS pubDate 是简报日期的 UTC 00:00，仅表示日期精度，不是实际发稿时刻。正文另外标注来源日期、事件日期、核验时刻及证据。
+
+verification 支持 verified（直连 X 已核验）、x-mirror（第三方镜像，原帖未直连核验）、official-source（官方来源）、official-source-sample（保留样例）。第三方镜像时间可能是最后编辑时间；根据 status ID 推算时间必须明确记录 timestampBasis 并披露。互动数保持 null。
+
+## 发布门槛
+
+不足十条就发布实际核验数量，不凑榜。没有统一采样范围、可比较窗口和真实带时间计数，不发布“上升最快”结论。当前 validator 仅接受 unavailable 的 trends，且拒绝排名或互动数；接入可验证测量系统后须先扩展测试再改此门槛。仓库无定时工作流或 API 凭证。

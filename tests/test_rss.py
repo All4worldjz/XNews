@@ -53,7 +53,7 @@ class RSSTests(unittest.TestCase):
         self.assertEqual(nodes[0].findtext('title'), 'A & B <C> "D"')
         self.assertIn('&lt;script&gt;', nodes[0].findtext('description'))
         guids = {n.findtext('guid') for n in nodes}
-        self.assertEqual(len(guids), 2)
+        self.assertEqual(len(guids), len(data['issues'][0]['items']) * 2)
         data['issues'].reverse()
         self.assertEqual(first, self.feed.build_feed(data))
         self.assertEqual(first, self.feed.build_feed(data))

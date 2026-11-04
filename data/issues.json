@@ -1,26 +1,325 @@
 {
   "schemaVersion": 1,
-  "mode": "preview",
+  "mode": "published",
   "timezone": "UTC",
-  "issues": [{
-    "date": "2026-11-04",
-    "title": "把信息流，变成值得读的新闻。",
-    "status": "sample",
-    "coverage": "本期仅展示 1 条官方来源样例；尚未核验近期 X 原帖。不构成 X 热门榜或完整的每日简报。",
-    "items": [{
-      "id": "cortex-ai-gateway-ga",
-      "category": "开发工具",
-      "title": "Snowflake Cortex AI Gateway：推理、可观测性与成本管理正式可用",
-      "summary": "Snowflake 发布说明宣布，这三项能力已正式可用。AI 客户端可以通过统一受治理的入口访问模型，并记录请求轨迹、按用户归属成本。",
-      "whyItMatters": "编辑解读：对需要管理多个 AI 应用的团队，统一观察调用与费用有助于减少运维分散。具体收益仍需结合实际工作负载评估。",
-      "caveat": "Trace analytics 与 Tools for Cortex AI Gateway 仍为预览功能，不应与上述正式可用能力混淆。",
-      "sourcePublishedDate": "2026-11-03",
-      "eventDate": "2026-11-03",
-      "verifiedAt": "2026-11-04T03:26:00Z",
-      "verification": "official-source-sample",
-      "xPostUrl": null,
-      "engagement": null,
-      "sources": [{"label": "Snowflake 官方发布说明", "url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-11-03-cortex-ai-gateway-ga", "type": "official"}]
-    }]
-  }]
+  "issues": [
+    {
+      "date": "2026-11-04",
+      "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-04",
+      "status": "published",
+      "coverage": "本期为过去24小时内可公开查到的X内容编辑精选，含新闻、技术分享与计划推广；不是X全站热度Top-10。原帖内容经公开镜像读取，X直接访问受限。排序为编辑顺序。 采样窗口：2026-11-03T06:49:40Z 至 2026-11-04T06:49:40Z。另保留 1 条已发布官方来源样例，便于旧订阅链接继续访问。",
+      "items": [
+        {
+          "id": "codex-physical-engineering",
+          "category": "开发工具",
+          "title": "OpenAI 将 Codex 推进机械、电气设计与仿真",
+          "summary": "OpenAI 展示 ChatGPT/Codex 在 CAD、PCB 和仿真工作流中的进展，并披露与 Chip Ganassi Racing、Mazda 的合作。制造公差与可装配性仍需工程师多轮审查，不能解读为无人监督即可投产。",
+          "whyItMatters": "编辑解读：AI 编程工具正在延伸到实体工程，但设计验证与制造责任仍属于工程团队。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T18:56:00Z",
+          "timestampBasis": "mirror_post_timestamp",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/OpenAI/status/2117692475775258785",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "OpenAI 的公开镜像记录",
+              "url": "https://teapawt.org/OpenAI/status/2117692475775258785",
+              "type": "mirror"
+            },
+            {
+              "label": "官方说明",
+              "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "anthropic-flashprove",
+          "category": "模型与研究",
+          "title": "Anthropic 在 X 介绍 FlashProve，验证推理来自哪个模型",
+          "summary": "Anthropic 在 X 介绍 FlashProve，以密码学证明验证模型推理来源。官方研究文章发布于 2026-11-02；本期收录的是 11 月 3 日的 X 讨论，不是当天首次发布。它不等于证明回答内容真实或业务决策正确。",
+          "whyItMatters": "编辑解读：模型身份验证是企业可信推理的一层，不替代内容正确性检查。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 镜像所列时间为最后编辑时间，不保证是首次发帖时间。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T20:10:00Z",
+          "timestampBasis": "mirror_last_edited_timestamp",
+          "eventDate": "2026-11-02",
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/AnthropicAI/status/2117710942826123294",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "AnthropicAI 的公开镜像记录",
+              "url": "https://teapawt.org/AnthropicAI/status/2117710942826123294",
+              "type": "mirror"
+            },
+            {
+              "label": "官方说明",
+              "url": "https://www.anthropic.com/research/provable-inference",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "crowdstrike-ai-kill-switch",
+          "category": "Enterprise Agentic AI",
+          "title": "CrowdStrike 宣布 AI Kill Switch",
+          "summary": "Falcon Guardian 增加由授权管理员触发的终止、阻止重启和切断网络访问能力，并保留审计记录。官方称功能已可用，但说明先在 Gateway 执行终止，端点能力随后推进。",
+          "whyItMatters": "编辑解读：企业 Agent 需要可审计的紧急停止机制。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 帖子时间由镜像所列 X status ID 推算，并非页面明确的绝对时间。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T08:39:41.476Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/CrowdStrike/status/2117537184903238032",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "CrowdStrike 的公开镜像记录",
+              "url": "https://teapawt.org/CrowdStrike",
+              "type": "mirror"
+            },
+            {
+              "label": "官方说明",
+              "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-introduces-ai-kill-switch-for-ai-safety/",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "crowdstrike-fiddler-agreement",
+          "category": "Enterprise Agentic AI",
+          "title": "CrowdStrike 拟收购 Fiddler，补强 Agent 可观测性",
+          "summary": "CrowdStrike 已签署收购 Fiddler AI 的最终协议，计划引入部署前评估、行为追踪和解释能力。交易与产品整合尚待完成，不能写成已完成收购或已全面上线。",
+          "whyItMatters": "编辑解读：可观测性有助于把 Agent 行为纳入企业运行与风险管理。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 帖子时间由镜像所列 X status ID 推算，并非页面明确的绝对时间。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T08:37:27.472Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/CrowdStrike/status/2117536622849749165",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "CrowdStrike 的公开镜像记录",
+              "url": "https://teapawt.org/CrowdStrike",
+              "type": "mirror"
+            },
+            {
+              "label": "官方说明",
+              "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-fiddler-to-deliver-agent-observability/",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "crowdstrike-dreadnode-agreement",
+          "category": "Enterprise Agentic AI",
+          "title": "CrowdStrike 拟收购 Dreadnode，扩展 AI 安全测试",
+          "summary": "CrowdStrike 宣布签署收购 Dreadnode 的最终协议，拟将模型、应用和 Agent 的自动化安全测试扩展至 Falcon 平台，重点是在生产部署前发现弱点。公告属于拟议交易。",
+          "whyItMatters": "编辑解读：在上线前测试 Agent 的攻击面，是企业部署的一个基础环节。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 帖子时间由镜像所列 X status ID 推算，并非页面明确的绝对时间。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T08:54:00.694Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/CrowdStrike/status/2117540788724785222",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "CrowdStrike 的公开镜像记录",
+              "url": "https://teapawt.org/CrowdStrike",
+              "type": "mirror"
+            },
+            {
+              "label": "官方说明",
+              "url": "https://ir.crowdstrike.com/node/17971/pdf",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "claude-cowork-guardian",
+          "category": "Enterprise Agentic AI",
+          "title": "Falcon Guardian 宣布与 Claude Cowork 原生集成",
+          "summary": "CrowdStrike 与 Anthropic 公布合作，将 Falcon Guardian AIDR 引入 Claude Cowork，从 Agent 创建到任务执行提供检测、响应及集中管理。企业价值在于把 Agent 纳入现有安全控制体系。",
+          "whyItMatters": "编辑解读：把 Agent 接入现有安全控制，比孤立采购功能更接近企业落地要求。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 帖子时间由镜像所列 X status ID 推算，并非页面明确的绝对时间。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T09:29:28.033Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/CrowdStrike/status/2117549711431225711",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "CrowdStrike 的公开镜像记录",
+              "url": "https://teapawt.org/CrowdStrike",
+              "type": "mirror"
+            },
+            {
+              "label": "官方说明",
+              "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-extends-anthropics-claude-cowork/",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "cognition-security-promotion",
+          "category": "计划推广",
+          "title": "Cognition 推广企业漏洞修复额度计划",
+          "summary": "Cognition 在 X 推广面向企业的逾 1 亿美元 Devin Security 额度计划，用于借助 AI 修复关键漏洞。官网确认额度受资格与计划条款约束；当日帖为推广，未确认首次推出日期。",
+          "whyItMatters": "编辑解读：推广额度可能降低试用门槛，但适用条件和实际效果需要单独评估。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 帖子时间由镜像所列 X status ID 推算，并非页面明确的绝对时间。 这是当日推广帖，计划首次推出日期未确认；Cognition 可按条款改变或终止计划。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T22:24:37.294Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/cognition/status/2117744785410728437",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "cognition 的公开镜像记录",
+              "url": "https://teapawt.org/cognition",
+              "type": "mirror"
+            },
+            {
+              "label": "Cognition 官方计划与资格条款",
+              "url": "https://devin.ai/security",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "fal-series-e-f",
+          "category": "行业动态",
+          "title": "fal 宣布 E、F 两轮融资",
+          "summary": "fal 官方页面宣布 E、F 两轮融资分别由 Sequoia 和 Bessemer 领投，NVIDIA 继续投资。公开 X 镜像帖称合计金额为 16.5 亿美元，该金额未在本次读取的官方文章中独立确认。E 轮较早已完成，此次一并宣布，不能当作单轮融资。",
+          "whyItMatters": "编辑解读：生成式媒体基础设施继续获得资金支持；融资不等于业务效果保证。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T18:05:00Z",
+          "timestampBasis": "mirror_post_timestamp",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/fal/status/2117679688860508283",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "fal 的公开镜像记录",
+              "url": "https://teapawt.org/fal/status/2117679688860508283",
+              "type": "mirror"
+            },
+            {
+              "label": "官方说明",
+              "url": "https://fal.ai/blog/series-e-f",
+              "type": "official"
+            }
+          ]
+        },
+        {
+          "id": "claude-ocr-experiment",
+          "category": "技术分享",
+          "title": "Claude 修改少量 OCR 模型权重的实验",
+          "summary": "Daniel van Strien 报告让 Claude Opus 修改 OCR 模型 0.0085% 权重，减少重复输出；在 2,165 页历史书籍测试中失控循环由 3 次降至 1 次。属于作者实验报告，其他卷册未见改善，不能推断为通用能力。",
+          "whyItMatters": "编辑解读：小范围实验可提供调试思路，但不能从单一测试推断普遍能力。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 作者实验报告，未独立复现；其他卷册未见改善。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T16:54:00Z",
+          "timestampBasis": "mirror_post_timestamp",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/vanstriendaniel/status/2117661605336928668",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "vanstriendaniel 的公开镜像记录",
+              "url": "https://teapawt.org/vanstriendaniel/status/2117661605336928668",
+              "type": "mirror"
+            }
+          ]
+        },
+        {
+          "id": "mopd-technical-explainer",
+          "category": "技术分享",
+          "title": "MOPD 技术解读：把多个专家蒸馏为一个模型",
+          "summary": "Sergio Paniego 发布 MOPD 技术文章，介绍 TRL 的异步蒸馏工作流：按提示领域选择专家教师，并监控不同领域的 token 占比。这是技术分享，不是新基础模型发布。",
+          "whyItMatters": "编辑解读：多专家蒸馏是模型训练路线之一，技术解读不等于独立性能复现。",
+          "caveat": "原帖内容通过第三方公开镜像读取，未直连 X 核验；互动数据未获取，不参与热度排名。 技术分享，非新基础模型发布；文章同样来自镜像。",
+          "sourcePublishedDate": "2026-11-03",
+          "sourcePublishedAt": "2026-11-03T12:49:00Z",
+          "timestampBasis": "mirror_post_timestamp",
+          "eventDate": null,
+          "verifiedAt": "2026-11-04T06:51:40Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/SergioPaniego/status/2117599953153294341",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "SergioPaniego 的公开镜像记录",
+              "url": "https://teapawt.org/SergioPaniego/status/2117599953153294341",
+              "type": "mirror"
+            },
+            {
+              "label": "镜像文章",
+              "url": "https://teapawt.org/SergioPaniego/article/2117599953153294341",
+              "type": "mirror"
+            }
+          ]
+        },
+        {
+          "id": "cortex-ai-gateway-ga",
+          "category": "开发工具",
+          "title": "Snowflake Cortex AI Gateway：推理、可观测性与成本管理正式可用",
+          "summary": "Snowflake 发布说明宣布，这三项能力已正式可用。AI 客户端可以通过统一受治理的入口访问模型，并记录请求轨迹、按用户归属成本。",
+          "whyItMatters": "编辑解读：对需要管理多个 AI 应用的团队，统一观察调用与费用有助于减少运维分散。具体收益仍需结合实际工作负载评估。",
+          "caveat": "Trace analytics 与 Tools for Cortex AI Gateway 仍为预览功能，不应与上述正式可用能力混淆。",
+          "sourcePublishedDate": "2026-11-03",
+          "eventDate": "2026-11-03",
+          "verifiedAt": "2026-11-04T03:26:00Z",
+          "verification": "official-source-sample",
+          "xPostUrl": null,
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Snowflake 官方发布说明",
+              "url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-11-03-cortex-ai-gateway-ga",
+              "type": "official"
+            }
+          ]
+        }
+      ],
+      "trends": {
+        "status": "unavailable",
+        "items": [],
+        "reason": "缺少同一口径、可比较且带采样时间的连续互动数据，不能核验上升最快10个话题。不同镜像页面数字不同且缓存时间不明，不能把差值当增速。"
+      },
+      "windowStart": "2026-11-03T06:49:40Z",
+      "windowEnd": "2026-11-04T06:49:40Z"
+    }
+  ],
+  "keywords": [
+    "AI",
+    "Enterprise Agentic AI",
+    "企业智能体",
+    "Agent 安全",
+    "模型与研究"
+  ]
 }

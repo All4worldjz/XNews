@@ -1,34 +1,66 @@
-import json, pathlib, datetime, urllib.parse
-root = pathlib.Path(__file__).parent
-d = json.loads((root/'data/issues.json').read_text())
-assert d['mode'] == 'preview'
-assert d['schemaVersion'] == 1
-assert d['timezone'] == 'UTC'
-seen = set()
-for issue in d['issues']:
-    datetime.date.fromisoformat(issue['date'])
-    assert issue['date'] not in seen
-    seen.add(issue['date'])
-    assert issue['coverage']
-    ids = set()
-    for item in issue['items']:
-        assert item['id'] not in ids
-        ids.add(item['id'])
-        for key in ['title','summary','whyItMatters','caveat','category']:
-            assert item[key]
-        for key in ['sourcePublishedDate','eventDate']:
-            if item[key]: datetime.date.fromisoformat(item[key])
-        if item['verifiedAt']: datetime.datetime.fromisoformat(item['verifiedAt'].replace('Z','+00:00'))
-        assert item['sources']
-        for source in item['sources']:
-            assert urllib.parse.urlparse(source['url']).scheme == 'https'
-        if item['verification'] == 'verified':
-            url = urllib.parse.urlparse(item['xPostUrl'])
-            assert url.hostname in ['x.com','www.x.com','twitter.com','www.twitter.com'] and '/status/' in url.path
-        if item['verification'] == 'official-source-sample': assert item['xPostUrl'] is None
-for filename in ['app.js','style.css','index.html','.nojekyll']:
-    assert (root/filename).exists()
-assert not (root/'.github/workflows').exists()
-print(f'PASS: {len(d["issues"])} issue(s), schema, dates, links, labels, static files, no workflows')
-import subprocess, sys
-subprocess.run([sys.executable, str(root / 'scripts/build_feed.py'), '--check'], check=True)
+"""Validate canonical issue data without making network or publishing calls."""
+import datetime
+import json
+import pathlib
+import re
+import subprocess
+import sys
+from urllib.parse import urlsplit
+
+ROOT = pathlib.Path(__file__).resolve().parent
+VERIFICATIONS = {'verified', 'x-mirror', 'official-source', 'official-source-sample'}
+
+def require(value, message):
+    if not value: raise ValueError(message)
+
+def https(value):
+    url = urlsplit(value or '')
+    return url.scheme == 'https' and bool(url.hostname) and not url.username and not url.password
+
+def validate_data(data):
+    require(data.get('mode') in {'preview', 'published'}, 'Unknown publication mode')
+    require(data.get('schemaVersion') == 1 and data.get('timezone') == 'UTC', 'Unsupported schema/timezone')
+    dates = set()
+    for issue in data['issues']:
+        datetime.date.fromisoformat(issue['date'])
+        require(issue['date'] not in dates, 'Duplicate issue date')
+        dates.add(issue['date'])
+        require(issue.get('coverage'), 'Coverage is required')
+        require(issue.get('status') in {'sample', 'published'}, 'Unknown issue status')
+        trends = issue.get('trends')
+        if issue['status'] == 'published': require(trends, 'Published issue needs an explicit trends state')
+        if trends:
+            require(trends.get('status') == 'unavailable', 'Measured rankings are not supported without a validated measurement pipeline')
+            require(trends.get('reason') and not trends.get('items'), 'Unavailable trends cannot contain rankings')
+        ids = set()
+        for item in issue['items']:
+            require(re.fullmatch(r'[a-z0-9][a-z0-9-]*', item['id']) and item['id'] not in ids, 'Invalid or duplicate item ID')
+            ids.add(item['id'])
+            for key in ['title', 'summary', 'whyItMatters', 'caveat', 'category']:
+                require(isinstance(item.get(key), str) and item[key].strip(), f'Missing {key}')
+            for key in ['sourcePublishedDate', 'eventDate']:
+                if item.get(key): datetime.date.fromisoformat(item[key])
+            if item.get('verifiedAt'):
+                stamp = datetime.datetime.fromisoformat(item['verifiedAt'].replace('Z', '+00:00'))
+                require(stamp.tzinfo is not None, 'Verification timestamp needs timezone')
+            verification = item.get('verification')
+            require(verification in VERIFICATIONS, 'Unknown verification state')
+            require(item.get('sources'), 'Sources are required')
+            for source in item['sources']: require(https(source['url']) and source.get('label'), 'Invalid source')
+            if verification in {'verified', 'x-mirror'}:
+                url = urlsplit(item.get('xPostUrl') or '')
+                require(https(item.get('xPostUrl')) and url.hostname in {'x.com','www.x.com','twitter.com','www.twitter.com'} and re.fullmatch(r'/[A-Za-z0-9_]+/status/[0-9]+/?', url.path), 'Invalid X permalink')
+                require(item.get('verifiedAt') and item.get('sourcePublishedDate'), 'X evidence needs timestamp and source date')
+                if verification == 'x-mirror': require(any(s.get('type') == 'mirror' for s in item['sources']), 'Mirror source must be disclosed')
+            else:
+                require(item.get('xPostUrl') is None, 'Official-only item cannot imply X verification')
+            require(item.get('engagement') is None, 'Engagement publishing awaits validated measurement pipeline')
+    return data
+
+def main():
+    data = validate_data(json.loads((ROOT / 'data/issues.json').read_text()))
+    for name in ['app.js', 'style.css', 'index.html', '.nojekyll']: require((ROOT / name).exists(), f'Missing {name}')
+    subprocess.run([sys.executable, str(ROOT / 'scripts/build_feed.py'), '--check'], check=True)
+    print(f'PASS: {len(data["issues"])} issue(s), schema, dates, evidence labels, static files and RSS')
+
+if __name__ == '__main__': main()
