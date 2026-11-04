@@ -40,3 +40,7 @@ verification 支持 verified（直连 X 已核验）、x-mirror（第三方镜�
 条目的可选 `article.sections` 保存正文（heading 与 paragraphs），由 `scripts/build_articles.py` 生成不依赖 JavaScript 的独立页面。RSS 包含同一份完整正文与文章链接，原有 GUID 不变。修改正文后同时生成文章与 RSS；`validate.py` 会检查两者是否过期。文章样式包含移动端、目录、键盘焦点与打印排版。
 
 `syndicated-source` 表示署名转载正文与官方资料交叉核对，必须包含 republication 类型来源；不计入直接 X 核验或镜像精选。来源日期使用转载页日期，原帖访问限制另行说明。
+
+## 知识债专题与信息图
+
+新增知识债专题报告，区分研究证据、概念框架和治理建议。正文配备两幅信息图、移动端流程图和五项研究证据对照表。图像保留文字说明；文章与 RSS 同源生成。渲染器支持 visuals、figures、tables、subheadings，发布验证检查位置与图像文件。

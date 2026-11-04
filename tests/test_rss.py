@@ -32,7 +32,7 @@ class RSSTests(unittest.TestCase):
             self.assertEqual(node.findtext('title'), item['title'])
             self.assertEqual(parsedate_to_datetime(node.findtext('pubDate')).date().isoformat(), issue['date'])
             description = node.findtext('description')
-            self.assertIn(item['sourcePublishedDate'], description)
+            self.assertIn(item.get('sourcePublishedDate') or '未确认', description)
             self.assertIn('来源发布日期', description)
             self.assertIn('简报发布日期', description)
             if issue['status'] == 'sample':

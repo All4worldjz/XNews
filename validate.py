@@ -60,6 +60,18 @@ def validate_data(data):
                 require(isinstance(article, dict), 'Article must be an object')
                 sections = article.get('sections')
                 require(isinstance(sections, list) and sections, 'Article needs sections')
+                for kind in ['visuals','figures','tables']:
+                    entries=article.get(kind,[])
+                    require(isinstance(entries,list), 'Article extras must be lists')
+                    for entry in entries:
+                        require(isinstance(entry,dict) and type(entry.get('afterSection',0)) is int and 0 <= entry.get('afterSection',0) <= len(sections), 'Invalid article placement')
+                        if kind == 'figures':
+                            for field in ['src','mobileSrc']:
+                                if entry.get(field):require(re.fullmatch(r'assets/[a-z0-9][a-z0-9-]*\.(svg|png|webp|jpg)',entry[field]), 'Invalid figure path')
+                            require(entry.get('src') and entry.get('alt') and entry.get('caption'), 'Figure needs path, alt and caption')
+                        if kind == 'tables':
+                            require(entry.get('title') and entry.get('columns') and entry.get('rows'), 'Table needs title, columns and rows')
+                            require(all(len(row)==len(entry['columns']) for row in entry['rows']), 'Table rows must match columns')
                 for section in sections:
                     require(isinstance(section, dict) and isinstance(section.get('heading'), str) and section['heading'].strip(), 'Article section needs heading')
                     paragraphs = section.get('paragraphs')
@@ -70,6 +82,11 @@ def validate_data(data):
 def main():
     data = validate_data(json.loads((ROOT / 'data/issues.json').read_text()))
     for name in ['app.js', 'style.css', 'article.css', 'index.html', '.nojekyll']: require((ROOT / name).exists(), f'Missing {name}')
+    for issue in data['issues']:
+        for item in issue['items']:
+            for figure in item.get('article',{}).get('figures',[]):
+                for field in ['src','mobileSrc']:
+                    if figure.get(field):require((ROOT / figure[field]).is_file(), 'Missing figure asset: '+figure[field])
     subprocess.run([sys.executable, str(ROOT / 'scripts/build_feed.py'), '--check'], check=True)
     subprocess.run([sys.executable, str(ROOT / 'scripts/build_articles.py'), '--check'], check=True)
     print(f'PASS: {len(data["issues"])} issue(s), schema, dates, evidence labels, static files and RSS')

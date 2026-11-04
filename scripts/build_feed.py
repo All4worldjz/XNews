@@ -33,11 +33,11 @@ def description(issue, item):
                        f"事件日期：{item.get('eventDate') or '未确认'}",
                        f"核验时间：{item.get('verifiedAt') or '未核验'}"])
     content = ''.join(f'<p>{escape(str(value))}</p>' for value in paragraphs)
-    for source in item.get('sources', []):
+    for number, source in enumerate(item.get('sources', []),1):
         url = source['url']
         if urlsplit(url).scheme != 'https' or not urlsplit(url).netloc:
             raise ValueError('Source links must be absolute HTTPS URLs')
-        content += f'<p>来源：<a href="{escape(url, quote=True)}">{escape(source["label"])}</a></p>'
+        content += f'<p>来源 [{number}]：<a href="{escape(url, quote=True)}">{escape(source["label"])}</a></p>'
     x_url = item.get('xPostUrl')
     if x_url and urlsplit(x_url).scheme == 'https' and urlsplit(x_url).netloc:
         label = 'X 原帖链接（未直连核验）' if item.get('verification') in {'x-mirror', 'syndicated-source'} else '查看 X 原帖'
@@ -46,9 +46,24 @@ def description(issue, item):
         content += '<p>X 原帖：未核验 · 互动数据：未获取</p>'
     if item.get('article'):
         content += f'<p><a href="{SITE}articles/{issue["date"]}-{quote(item["id"], safe="")}.html">阅读全文</a></p>'
+        for figure in item['article'].get('figures', []):
+            import re
+            if not re.fullmatch(r'assets/[a-z0-9][a-z0-9-]*\.(svg|png|webp|jpg)', figure['src']): raise ValueError('Invalid figure asset path')
+            content += f'<p><img src="{SITE}{escape(figure["src"],quote=True)}" alt="{escape(figure["alt"],quote=True)}"></p><p>{escape(figure["caption"])}</p><p>信息图文字说明：{escape(figure["alt"])}</p>'
+        for table in item['article'].get('tables', []):
+            content += f'<h2>{escape(table["title"])}</h2>'
+            for row in table['rows']:
+                content += '<p>' + '；'.join(escape(col)+ '：'+escape(cell) for col,cell in zip(table['columns'],row)) + '</p>'
+        for visual in item['article'].get('visuals', []):
+            content += f'<h2>{escape(visual["title"])}</h2><p>{escape(visual["caption"])}</p><ol>'
+            for card in visual['cards']:
+                content += f'<li>{escape(card["label"])} — {escape(card["headline"])}: {escape(card["text"])}</li>'
+            content += '</ol>'
         for section in item['article']['sections']:
             content += f'<h2>{escape(section["heading"])}</h2>'
-            content += ''.join(f'<p>{escape(p)}</p>' for p in section['paragraphs'])
+            for index, paragraph in enumerate(section['paragraphs']):
+                content += ''.join(f'<h3>{escape(h["title"])}</h3>' for h in section.get('subheadings',[]) if h['beforeParagraph']==index)
+                content += f'<p>{escape(paragraph)}</p>'
     return content
 
 
