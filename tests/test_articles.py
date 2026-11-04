@@ -60,9 +60,26 @@ class ArticleTests(unittest.TestCase):
         with self.assertRaises(ValueError):m.render_article(issue,item)
     def test_data_table_has_caption_headers_and_feed_text(self):
         data=json.loads((ROOT/'data/issues.json').read_text());issue=data['issues'][0];item=issue['items'][0]
-        item['article']['tables']=[{'title':'Evidence comparison','columns':['Study','Limit'],'rows':[['Study A','No causality']],'afterSection':1}]
+        item['article']['tables']=[{'title':'Evidence comparison','columns':['Study','Limit'],'rows':[['Study A','No causality']],'note':'Hypothetical, not industry prices','afterSection':1}]
         for name,script in [('articles','build_articles.py'),('feed','build_feed.py')]:
             spec=importlib.util.spec_from_file_location(name,ROOT/'scripts'/script);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
             out=m.render_article(issue,item) if name=='articles' else m.description(issue,item)
-            self.assertIn('Evidence comparison',out);self.assertIn('No causality',out)
+            self.assertIn('Evidence comparison',out);self.assertIn('No causality',out);self.assertIn('Hypothetical, not industry prices',out)
             if name=='articles':self.assertIn('scope="col"',out)
+    def test_emphasis_is_safe_in_page_and_feed(self):
+        data=json.loads((ROOT/'data/issues.json').read_text());issue=data['issues'][0];item=issue['items'][0]
+        item['article']['sections']=[{'heading':'Main','paragraphs':['**Important <script>** and context']}]
+        for name,script in [('articles','build_articles.py'),('feed','build_feed.py')]:
+            spec=importlib.util.spec_from_file_location(name,ROOT/'scripts'/script);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+            out=m.render_article(issue,item) if name=='articles' else m.description(issue,item)
+            self.assertIn('<strong>Important &lt;script&gt;</strong>',out)
+    def test_table_can_appear_at_its_original_text_position(self):
+        data=json.loads((ROOT/'data/issues.json').read_text());issue=data['issues'][0];item=data['issues'][0]['items'][0]
+        item['article']={'sections':[{'heading':'Main','paragraphs':['Before table','After table']}],'tables':[{'title':'Inline table','columns':['Key'],'rows':[['Value']],'afterSection':1,'beforeParagraph':1}]}
+        spec=importlib.util.spec_from_file_location('articles',ROOT/'scripts/build_articles.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+        out=m.render_article(issue,item);self.assertLess(out.index('Before table'),out.index('<caption>Inline table'));self.assertLess(out.index('<caption>Inline table'),out.index('After table'))
+    def test_figure_can_appear_before_the_next_subheading(self):
+        data=json.loads((ROOT/'data/issues.json').read_text());issue=data['issues'][0];item=issue['items'][0]
+        item['article']={'sections':[{'heading':'Main','paragraphs':['Before figure','After figure'],'subheadings':[{'beforeParagraph':1,'title':'Next topic'}]}],'figures':[{'src':'assets/test.svg','alt':'Diagram','caption':'Figure note','afterSection':1,'beforeParagraph':1}]}
+        spec=importlib.util.spec_from_file_location('articles',ROOT/'scripts/build_articles.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+        out=m.render_article(issue,item);self.assertLess(out.index('Before figure'),out.index('alt="Diagram"'));self.assertLess(out.index('alt="Diagram"'),out.index('<h3>Next topic'))

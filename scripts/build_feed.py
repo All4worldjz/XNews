@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the static RSS feed from canonical issue data. No network or publishing."""
 import argparse
+import re
 from datetime import datetime, time, timezone, date
 from email.utils import format_datetime
 from html import escape
@@ -47,11 +48,11 @@ def description(issue, item):
     if item.get('article'):
         content += f'<p><a href="{SITE}articles/{issue["date"]}-{quote(item["id"], safe="")}.html">阅读全文</a></p>'
         for figure in item['article'].get('figures', []):
-            import re
             if not re.fullmatch(r'assets/[a-z0-9][a-z0-9-]*\.(svg|png|webp|jpg)', figure['src']): raise ValueError('Invalid figure asset path')
             content += f'<p><img src="{SITE}{escape(figure["src"],quote=True)}" alt="{escape(figure["alt"],quote=True)}"></p><p>{escape(figure["caption"])}</p><p>信息图文字说明：{escape(figure["alt"])}</p>'
         for table in item['article'].get('tables', []):
             content += f'<h2>{escape(table["title"])}</h2>'
+            if table.get('note'): content += f'<p>{escape(table["note"])}</p>'
             for row in table['rows']:
                 content += '<p>' + '；'.join(escape(col)+ '：'+escape(cell) for col,cell in zip(table['columns'],row)) + '</p>'
         for visual in item['article'].get('visuals', []):
@@ -63,7 +64,8 @@ def description(issue, item):
             content += f'<h2>{escape(section["heading"])}</h2>'
             for index, paragraph in enumerate(section['paragraphs']):
                 content += ''.join(f'<h3>{escape(h["title"])}</h3>' for h in section.get('subheadings',[]) if h['beforeParagraph']==index)
-                content += f'<p>{escape(paragraph)}</p>'
+                formatted = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', escape(paragraph))
+                content += f'<p>{formatted}</p>'
     return content
 
 

@@ -65,11 +65,15 @@ def validate_data(data):
                     require(isinstance(entries,list), 'Article extras must be lists')
                     for entry in entries:
                         require(isinstance(entry,dict) and type(entry.get('afterSection',0)) is int and 0 <= entry.get('afterSection',0) <= len(sections), 'Invalid article placement')
+                        if 'beforeParagraph' in entry:
+                            require(1<=entry.get('afterSection',0)<=len(sections) and type(entry['beforeParagraph']) is int and 0<=entry['beforeParagraph']<=len(sections[entry['afterSection']-1]['paragraphs']), 'Invalid inline placement')
                         if kind == 'figures':
                             for field in ['src','mobileSrc']:
                                 if entry.get(field):require(re.fullmatch(r'assets/[a-z0-9][a-z0-9-]*\.(svg|png|webp|jpg)',entry[field]), 'Invalid figure path')
                             require(entry.get('src') and entry.get('alt') and entry.get('caption'), 'Figure needs path, alt and caption')
                         if kind == 'tables':
+                            if 'beforeParagraph' in entry:
+                                require(1<=entry.get('afterSection',0)<=len(sections) and type(entry['beforeParagraph']) is int and 0<=entry['beforeParagraph']<=len(sections[entry['afterSection']-1]['paragraphs']), 'Invalid inline table placement')
                             require(entry.get('title') and entry.get('columns') and entry.get('rows'), 'Table needs title, columns and rows')
                             require(all(len(row)==len(entry['columns']) for row in entry['rows']), 'Table rows must match columns')
                 for section in sections:

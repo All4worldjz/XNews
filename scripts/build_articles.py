@@ -14,7 +14,8 @@ SITE='https://all4worldjz.github.io/XNews/'
 def render_table(table):
     headers=''.join(f'<th scope="col">{escape(c)}</th>' for c in table['columns'])
     rows=''.join('<tr>'+''.join(f'<td>{escape(c)}</td>' for c in row)+'</tr>' for row in table['rows'])
-    return f'<div class="report-table" role="region" aria-label="{escape(table["title"],quote=True)}" tabindex="0"><table><caption>{escape(table["title"])}</caption><thead><tr>{headers}</tr></thead><tbody>{rows}</tbody></table></div><p class="table-note">小屏幕可横向滚动查看完整表格。不同研究对象与指标不可直接相加或抵消。</p>'
+    note=table.get('note','不同研究对象与指标不可直接相加或抵消。')
+    return f'<div class="report-table" role="region" aria-label="{escape(table["title"],quote=True)}" tabindex="0"><table><caption>{escape(table["title"])}</caption><thead><tr>{headers}</tr></thead><tbody>{rows}</tbody></table></div><p class="table-note">小屏幕可横向滚动查看完整表格。{escape(note)}</p>'
 
 def render_figure(figure):
     if not re.fullmatch(r'assets/[a-z0-9][a-z0-9-]*\.(svg|png|webp|jpg)',figure['src']): raise ValueError('Invalid figure asset path')
@@ -37,7 +38,8 @@ def render_article(issue,item):
         if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password: raise ValueError('Article links must use HTTPS without credentials')
     e=escape
     def paragraph(text):
-        return re.sub(r'\[(\d+)\]', lambda m: f'<a class="citation" href="#source-{m[1]}" aria-label="来源 {m[1]}">[{m[1]}]</a>' if 1 <= int(m[1]) <= len(item['sources']) else m[0], e(text))
+        text = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', e(text))
+        return re.sub(r'\[(\d+)\]', lambda m: f'<a class="citation" href="#source-{m[1]}" aria-label="来源 {m[1]}">[{m[1]}]</a>' if 1 <= int(m[1]) <= len(item['sources']) else m[0], text)
     xlink = ''
     if item.get('xPostUrl'):
         label = 'X 原帖链接（未直连核验）' if item.get('verification') in {'x-mirror', 'syndicated-source'} else '打开 X 原帖'
@@ -54,12 +56,16 @@ def render_article(issue,item):
     for n,section in enumerate(sections,1):
         body += f'<section id="section-{n}"><h2>{e(section["heading"])}</h2>'
         for index, text in enumerate(section['paragraphs']):
+            body += ''.join(render_figure(f) for f in figures if f.get('afterSection',0)==n and f.get('beforeParagraph')==index)
             body += ''.join(f'<h3>{e(h["title"])}</h3>' for h in section.get('subheadings',[]) if h['beforeParagraph']==index)
+            body += ''.join(render_table(t) for t in tables if t.get('afterSection',0)==n and t.get('beforeParagraph')==index)
             body += f'<p>{paragraph(text)}</p>'
+        body += ''.join(render_table(t) for t in tables if t.get('afterSection',0)==n and t.get('beforeParagraph')==len(section['paragraphs']))
+        body += ''.join(render_figure(f) for f in figures if f.get('afterSection',0)==n and f.get('beforeParagraph')==len(section['paragraphs']))
         body += '</section>'
         body += ''.join(render_visual(v) for v in visuals if v.get('afterSection',0)==n)
-        body += ''.join(render_figure(f) for f in figures if f.get('afterSection',0)==n)
-        body += ''.join(render_table(t) for t in tables if t.get('afterSection',0)==n)
+        body += ''.join(render_figure(f) for f in figures if f.get('afterSection',0)==n and 'beforeParagraph' not in f)
+        body += ''.join(render_table(t) for t in tables if t.get('afterSection',0)==n and 'beforeParagraph' not in t)
 
     sources=''.join(f'<li id="source-{n}"><a href="{e(s["url"],quote=True)}" rel="noopener noreferrer">{e(s["label"])}</a></li>' for n,s in enumerate(item['sources'],1))
     return f'''<!doctype html>
