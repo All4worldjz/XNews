@@ -1,5 +1,6 @@
 """Run with python3 -m unittest discover -s tests -p 'test_rss.py'."""
 import copy
+from datetime import date, timedelta
 import importlib.util
 import json
 from pathlib import Path
@@ -46,14 +47,14 @@ class RSSTests(unittest.TestCase):
         data['issues'][0]['items'][0]['title'] = 'A & B <C> "D"'
         data['issues'][0]['items'][0]['summary'] = '<script>alert("x")</script> & useful'
         duplicate = copy.deepcopy(data['issues'][0])
-        duplicate['date'] = '2026-11-05'
+        duplicate['date'] = (max(date.fromisoformat(i['date']) for i in data['issues']) + timedelta(days=1)).isoformat()
         data['issues'].append(duplicate)
         first = self.feed.build_feed(data)
         nodes = ET.fromstring(first).findall('./channel/item')
         self.assertEqual(nodes[0].findtext('title'), 'A & B <C> "D"')
         self.assertIn('&lt;script&gt;', nodes[0].findtext('description'))
         guids = {n.findtext('guid') for n in nodes}
-        self.assertEqual(len(guids), len(data['issues'][0]['items']) * 2)
+        self.assertEqual(len(guids), sum(len(issue['items']) for issue in data['issues']))
         data['issues'].reverse()
         self.assertEqual(first, self.feed.build_feed(data))
         self.assertEqual(first, self.feed.build_feed(data))

@@ -6,7 +6,79 @@
     <description>XNews 编辑精选，非 X 全站热榜。区分 X 原帖核验、镜像线索与官方来源；来源日期与简报日期分别标注。</description>
     <language>zh-CN</language>
     <atom:link href="https://all4worldjz.github.io/XNews/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>OpenAI 披露自主安全研究流水线：验证 948 个 Linux 提权漏洞</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#openai-linux-agent-pipeline</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;OpenAI 介绍一套自主发现、验证漏洞并生成候选补丁的代理流水线。官方报告称，10 月中旬的一次运行验证了 948 个独立的 Linux 本地提权漏洞，并生成对应补丁，API 成本约 121 万美元。结果由安全研究人员复核，再向维护者报告。&lt;/p&gt;&lt;p&gt;编辑解读：规模化漏洞发现把压力转向复现、去重、修补与人工审核。企业安全团队应关注可验证证据与补丁闭环，而非仅比较发现数量。&lt;/p&gt;&lt;p&gt;这是 11 月 4 日发布的研究报告，实验发生在 10 月中旬。候选补丁不等于均已合入或完成部署，数量和成本为 OpenAI 自报。X 原帖经公开镜像读取，时间由 ID 推导，未直接读取 X。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：未确认&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:01:04Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://twstalker.com/OpenAI/status/2118119451401048497"&gt;OpenAI 原帖公开镜像&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://openai.com/index/a-thousand-fewer-paths-to-root/"&gt;OpenAI 官方研究：A thousand fewer paths to root&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/OpenAI/status/2118119451401048497"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>企业 Agent 与安全</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#openai-linux-agent-pipeline</guid>
+    </item>
+    <item>
+      <title>Google 再次介绍已正式可用的 Gemini API Computer Use</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#google-gemini-computer-use-ga</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;Google AI Studio 在当日 X 帖中介绍 Gemini API 的 Computer Use 工具，覆盖浏览器、移动端与桌面代理，并称从预览版迁移没有破坏性变更。官方更新日志确认该工具已于 10 月 30 日正式可用；文档列出各环境动作、用户确认处理、提示注入检测和隔离运行建议。&lt;/p&gt;&lt;p&gt;编辑解读：GUI 操作能力进入稳定接口后，企业可更系统地测试跨应用流程。部署重点仍应是最小权限、人工确认、运行日志和失败恢复。&lt;/p&gt;&lt;p&gt;这是 11 月 4 日的官方介绍帖，不是本日首次正式发布；GA 日期为 10 月 30 日。正式可用不等于所有流程都能安全无人值守，托管执行环境亦不能由此推定已上线。X 原帖经公开镜像读取，时间由 ID 推导，未直连核验；互动数据未获取。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：2026-10-30&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:01:04Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://twstalker.com/GoogleAIStudio/status/2118025709146829218"&gt;Google AI Studio 原帖公开镜像&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://aistudio.google.com/docs/computer-use"&gt;Google 官方 Computer Use 文档&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [3]：&lt;a href="https://aistudio.google.com/docs/changelog"&gt;Google 官方更新日志（10 月 30 日 GA）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/GoogleAIStudio/status/2118025709146829218"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>企业 Agent 基础设施</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#google-gemini-computer-use-ga</guid>
+    </item>
+    <item>
+      <title>Cognition 发布 SWE-2 Flash</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#cognition-swe-2-flash</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;Cognition 推出基于 Inkling-Small 的编码模型 SWE-2 Flash，现已进入 Devin Desktop 与 CLI。官方称价格为 SWE-2 的五分之一、速度约三倍；权重暂不公开，正筹备面向可信合作方和研究机构的受控共享计划。&lt;/p&gt;&lt;p&gt;编辑解读：编码模型竞争进一步转向日常任务的成本与速度，同时凸显开放权重与网络安全风险之间的取舍。&lt;/p&gt;&lt;p&gt;性能、价格和速度比较为 Cognition 官方口径，并非独立评测；不是已公开权重的模型。 X 原帖通过第三方公开档案读取，未直连核验；发布时间由 X status ID 推算，互动数据未获取，不参与热度排名。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：未确认&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:00:47Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://cognition.com/blog/swe-2-flash"&gt;官方资料&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://www.techtwitter.com/tweet/c8326611-2bb0-403b-a410-b2ec8b15e4af"&gt;原帖公开档案&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [3]：&lt;a href="https://nitter.gq/cognition/status/2118069614521241739"&gt;原帖公开档案&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/cognition/status/2118069614521241739"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>AI 编程工具</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#cognition-swe-2-flash</guid>
+    </item>
+    <item>
+      <title>Perplexity 为 Decisions API 加入网页证据</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#perplexity-decisions-web-grounding</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;Perplexity 将 Fast Search 接入 Decisions API。启用 web_grounding 后，系统会先为每个问题检索网页，再把结果加入决策模型的输入，并返回所用网页证据。&lt;/p&gt;&lt;p&gt;编辑解读：批量事实核验、信息分类和规则判断可以基于近期网页，而非只依赖模型训练知识或调用方提供的上下文。&lt;/p&gt;&lt;p&gt;文档列价为每次搜索或抓取 0.001 美元，pplx-decider-v1.2 每百万输入 token 0.02 美元；返回概率并不等于事实保证。 X 原帖通过第三方公开档案读取，未直连核验；发布时间由 X status ID 推算，互动数据未获取，不参与热度排名。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：未确认&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:00:47Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://docs.perplexity.ai/docs/decisions/quickstart"&gt;官方资料&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://www.techtwitter.com/tweet/1e6b73fd-511f-40c4-bf0d-acf83ee3d670"&gt;原帖公开档案&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [3]：&lt;a href="https://teapaw.org/perplexitydevs"&gt;原帖公开档案&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/AravSrinivas/status/2118093720243560711"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>企业 Agent 基础设施</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#perplexity-decisions-web-grounding</guid>
+    </item>
+    <item>
+      <title>Notion 分享跨代理共享记忆与技能的设置方法</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#notion-shared-memory-workflow</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;Notion 发布面向 ChatGPT、Claude、Muse 和 Bot 的设置入口，让不同代理把学习所得保存在同一处记忆中，并复用 Notion 内的技能。&lt;/p&gt;&lt;p&gt;编辑解读：团队的上下文和工作方法可以跨代理延续，降低切换工具时重复解释的成本；仍需管理共享范围和过期信息。&lt;/p&gt;&lt;p&gt;这是当日工作流分享，不表示共享记忆或 Skills API 在今天首次发布。官方背景文章分别发表于 8 月和 9 月。X 原帖通过第三方公开档案读取，未直连核验；发布时间由 X status ID 推算，互动数据未获取，不参与热度排名。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：未确认&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:00:47Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://www.techtwitter.com/tweet/2b5970bd-cbe3-4242-bc47-75d9a8476706"&gt;原帖公开档案&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://sg.linkedin.com/company/notionhq/"&gt;Notion 官方 LinkedIn 动态&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [3]：&lt;a href="https://www.notion.com/blog/building-shared-memory-for-ai-agents-in-notion"&gt;Notion 官方背景文章（非本日首发）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [4]：&lt;a href="https://www.notion.com/blog/a-skills-library-for-every-agent"&gt;Notion 官方背景文章（非本日首发）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/NotionHQ/status/2118059335930744999"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>企业 Agent 工作流</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#notion-shared-memory-workflow</guid>
+    </item>
+    <item>
+      <title>Hermes 将插件、连接器与技能整合到统一市场</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#hermes-unified-marketplace</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;Nous Research 宣布 Hermes Agent 的插件、连接器和技能已整合到同一个 marketplace，用户可在统一入口浏览并扩展代理能力。&lt;/p&gt;&lt;p&gt;编辑解读：代理扩展的发现和安装入口趋于集中，功能可组合性与第三方扩展的信任管理将更重要。&lt;/p&gt;&lt;p&gt;公告内容经公开档案读取；官方 marketplace 的搜索索引确认市场存在，直接页面读取失败。不要添加尚未核实的新增插件数量或安全保证。 X 原帖通过第三方公开档案读取，未直连核验；发布时间由 X status ID 推算，互动数据未获取，不参与热度排名。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：未确认&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:00:47Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://www.techtwitter.com/tweet/d27c2fd6-a8fc-4024-b7ba-0f89c1e02a8f"&gt;原帖公开档案&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://hermes-agent.nousresearch.com/marketplace?q=NousResearch"&gt;Hermes 官方市场（仅搜索索引可读）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/NousResearch/status/2118058453415371119"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>企业 Agent 生态</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#hermes-unified-marketplace</guid>
+    </item>
+    <item>
+      <title>OpenAI 发布 Images 2.6：新增 GIF，扩展 API 编辑能力</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#openai-images-2-6</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;OpenAI 宣布 Images 2.6 进入 ChatGPT、Codex 和 API，新增 GIF 生成与参考图像支持。API 新增 Flare、Sunburst 两款模型，以及图像标注编辑、SVG 导出等能力；官方称生成速度较此前提升 50%。&lt;/p&gt;&lt;p&gt;编辑解读：品牌素材、产品图与短动画可进入同一生成与修订流程，企业创意团队值得测试角色一致性、修改效率与真实成本。&lt;/p&gt;&lt;p&gt;速度与质量为官方陈述，并非本刊独立测评。X 原帖通过公开镜像读取，未直接读取 X；发布时间由帖子 ID 推导，互动数据不作可靠统计。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：2026-11-04&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:01:04Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://twstalker.com/OpenAI/status/2118124944928432327"&gt;OpenAI 原帖公开镜像&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://openai.com/index/introducing-images-2-6/"&gt;OpenAI 官方发布：Introducing Images 2.6&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/OpenAI/status/2118124944928432327"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>AI 产品与创作</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#openai-images-2-6</guid>
+    </item>
+    <item>
+      <title>Anthropic 分享 Claude 辅助解析原核来源 vault 颗粒结构</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#anthropic-vault-particles</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;Anthropic 生物研究团队报告，在研究人员指导下，Claude 参与了文献与数据库检索、实验方案优化和显微数据分析，帮助解析一种噬菌体来源的 vault 样蛋白颗粒三维结构。团队表示部分分析环节由数周缩短至数天，也记录了模型错误造成的延误。&lt;/p&gt;&lt;p&gt;编辑解读：这是专业人员与工具型代理共同推进科研的案例。提速价值依赖实验验证与专家纠错，不能把模型生成的结论直接当成科学发现。&lt;/p&gt;&lt;p&gt;成果属于早期研究；该结构在实验室大肠杆菌中制备，天然来源中的形成情况及生物功能仍待验证，并非已经解开 vault 功能之谜。X 原帖经公开镜像读取，时间由 ID 推导，未直接读取 X。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：2026-11-04&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:01:04Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://twstalker.com/AnthropicAI/status/2118073665296228863"&gt;Anthropic 原帖公开镜像&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://www.anthropic.com/research/investigating-vault-particles-with-claude"&gt;Anthropic 官方研究：Investigating vault particles with Claude&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/AnthropicAI/status/2118073665296228863"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>AI 科学与研究</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#anthropic-vault-particles</guid>
+    </item>
+    <item>
+      <title>Gemini 3.8 Flash TTS 上线 Voice Remixing</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-05#google-voice-remixing</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 9 条过去24小时内可公开查到的 X 内容，含产品公告、研究与工作流分享，按编辑顺序展示；不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-04 08:00 至 2026-11-05 08:00（UTC 2026-11-04T00:00:00Z 至 2026-11-05T00:00:00Z）。X 原帖直连核验数为 0：内容经第三方公开镜像或档案读取，并交叉核对可用官方资料；各条证据限制单独披露。帖子时间由 X status ID 推算，互动量未获取。未达到统一核验标准的候选未用于凑足十条。缺少可比较的连续观测，不发布热度涨速排名。&lt;/p&gt;&lt;p&gt;Google 宣布 Voice Remixing 已在 Google AI Studio 和 Gemini API 上线。开发者可从 2,000 多种预设声音或自定义声音出发，用提示词调整音色、音高、语速与口音，并在 AI Studio 比较、保存和复用生成版本。&lt;/p&gt;&lt;p&gt;编辑解读：可复用的声音版本有助于品牌配音与多语言内容制作。企业评估时还需检查长文本中的声音一致性、权利授权与透明标识。&lt;/p&gt;&lt;p&gt;此次新闻是 Voice Remixing 功能上线，官方更新日志列于 11 月 4 日，并非 Gemini 3.8 TTS 模型首次发布；模型介绍文章发布于 9 月 23 日。X 原帖经公开镜像读取，时间由 ID 推导，未直连核验；互动数据未获取。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-05（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-04&lt;/p&gt;&lt;p&gt;事件日期：2026-11-04&lt;/p&gt;&lt;p&gt;核验时间：2026-11-05T00:01:04Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://twstalker.com/Google/status/2118027058794148099"&gt;Google 原帖与续帖公开镜像&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/"&gt;Google 官方模型介绍（9 月 23 日，背景资料）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [3]：&lt;a href="https://aistudio.google.com/docs/changelog"&gt;Google 官方更新日志（11 月 4 日功能上线）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/Google/status/2118027058794148099"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>AI 语音与应用</category>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-05#google-voice-remixing</guid>
+    </item>
     <item>
       <title>服务会成为下一代软件吗？红杉论纲、企业现实与中国 FDE 的经营考验</title>
       <link>https://all4worldjz.github.io/XNews/?date=2026-11-04#services-new-software-china-fde</link>

@@ -35,5 +35,6 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaises(ValueError):validate_data(d)
     def test_rejects_out_of_range_visual_placement(self):
         d=copy.deepcopy(self.data);item=d['issues'][0]['items'][0]
+        item['article']={'sections':[{'heading':'Main','paragraphs':['Context']}]}
         item['article']['figures']=[{'src':'assets/test.svg','alt':'test','caption':'test','afterSection':999}]
         with self.assertRaises(ValueError):validate_data(d)
