@@ -182,7 +182,7 @@
           "title": "Hermes 将插件、连接器与技能整合到统一市场",
           "summary": "Nous Research 宣布 Hermes Agent 的插件、连接器和技能已整合到同一个 marketplace，用户可在统一入口浏览并扩展代理能力。",
           "whyItMatters": "编辑解读：代理扩展的发现和安装入口趋于集中，功能可组合性与第三方扩展的信任管理将更重要。",
-          "caveat": "公告内容经公开档案读取；官方 marketplace 的搜索索引确认市场存在，直接页面读取失败。不要添加尚未核实的新增插件数量或安全保证。 X 原帖通过第三方公开档案读取，未直连核验；发布时间由 X status ID 推算，互动数据未获取，不参与热度排名。",
+          "caveat": "公告内容经公开档案读取；官方 marketplace 的搜索索引确认市场存在，直接页面读取失败。新增插件数量与安全性未独立核验。 X 原帖通过第三方公开档案读取，未直连核验；发布时间由 X status ID 推算，互动数据未获取，不参与热度排名。",
           "sourcePublishedDate": "2026-11-04",
           "sourcePublishedAt": "2026-11-04T19:11:01.574Z",
           "timestampBasis": "snowflake_id_derived",
