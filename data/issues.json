@@ -4,6 +4,194 @@
   "timezone": "UTC",
   "issues": [
     {
+      "date": "2026-11-06",
+      "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-06",
+      "status": "published",
+      "coverage": "本期收录 6 条 AI 与 Enterprise Agentic AI 编辑精选，按编辑顺序展示，不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-05 08:00 至 2026-11-06 08:00（UTC 2026-11-05T00:00:00Z 至 2026-11-06T00:00:00Z）。X 原帖直连核验数为 0：正文经第三方公开镜像或摘录读取，并交叉核对可读取的官方资料；Perplexity 产品页读取限制单独披露。精确帖子时间由 X status ID 推算，部分镜像另提供分钟级时间。本期不发布互动量；不足十条不凑榜。缺少同一口径的连续观测，无法可靠给出热点涨速 Top 10。",
+      "windowStart": "2026-11-05T00:00:00Z",
+      "windowEnd": "2026-11-06T00:00:00Z",
+      "items": [
+        {
+          "id": "openai-gpt-6-cyber",
+          "category": "Agent 安全",
+          "title": "OpenAI 发布 GPT-6 Cyber，先向获准的安全团队开放",
+          "summary": "OpenAI 公布面向漏洞研究的 GPT-6 Cyber，强调更强的漏洞验证能力与遵守授权范围的表现。模型先向部分 Daybreak Red 客户开放，再逐步扩大访问。",
+          "whyItMatters": "编辑解读：企业安全 Agent 的采购评估需要同时检查任务能力和权限边界，不能只比较发现漏洞的数量。",
+          "caveat": "能力与对齐结果来自 OpenAI 自报评测，不代表任意生产环境都安全可靠；当前并非全面开放。昨日 Linux 漏洞研究仅作背景，不重复计为今日新发布。 X 原帖未直连核验；通过公开镜像或摘录核对正文。精确发布时间由 X status ID 推算，不等同于直接读取 X 页面时间；不发布互动量或热度排名。 X 帖时间：2026-11-05 17:09:13 UTC（北京时间 2026-11-06 01:09:13），由帖子 ID 推算。",
+          "sourcePublishedDate": "2026-11-05",
+          "sourcePublishedAt": "2026-11-05T17:09:13.798Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-05",
+          "verifiedAt": "2026-11-06T00:07:34Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/OpenAI/status/2118390190246879554",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "OpenAI 官方公告",
+              "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+              "type": "official"
+            },
+            {
+              "label": "官方账号公开镜像（11 月 5 日快照）",
+              "url": "https://grossretention.com/on-x",
+              "type": "mirror"
+            }
+          ]
+        },
+        {
+          "id": "box-architect-agentic-workflows",
+          "category": "企业 Agent 工作流",
+          "title": "Box 公布 Architect，将 AI 接入内容工作流构建与治理",
+          "summary": "Box 宣布 Architect，计划让企业通过 AI 构建和运行内容工作流，并介绍与 NVIDIA 合作的上下文检索能力及 Agent 安全控制。Architect 计划在第四季度向 Enterprise Advanced 客户提供 beta。",
+          "whyItMatters": "编辑解读：企业内容平台正在把文档访问、流程执行和权限控制连起来，落地评估应包含数据访问边界及人工接管。",
+          "caveat": "Architect 仍是计划中的 beta，不是已经全量上线的产品。官方分别说明 Agent 安全控制已 GA、新威胁防护预计明年初推出，不应混写成同时可用。 X 原帖未直连核验；通过公开镜像或摘录核对正文。精确发布时间由 X status ID 推算，不等同于直接读取 X 页面时间；不发布互动量或热度排名。 X 帖时间：2026-11-05 17:39:22 UTC（北京时间 2026-11-06 01:39:22），由帖子 ID 推算。",
+          "sourcePublishedDate": "2026-11-05",
+          "sourcePublishedAt": "2026-11-05T17:39:22.321Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-05",
+          "verifiedAt": "2026-11-06T00:07:34Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/levie/status/2118397775742431285",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Box 官方发布说明",
+              "url": "https://blog.box.com/box-unveils-next-generation-enterprise-ai-new-agentic-workflow-automation-and-advanced-threat",
+              "type": "official"
+            },
+            {
+              "label": "Box CEO 原帖公开镜像（11 月 5 日快照）",
+              "url": "https://grossretention.com/on-x",
+              "type": "mirror"
+            }
+          ]
+        },
+        {
+          "id": "perplexity-teammates-proactive-work",
+          "category": "企业 Agent 协作",
+          "title": "Perplexity 分享 Teammates：面向持续任务的主动协作助手",
+          "summary": "Perplexity 官方账号介绍 Teammates，可结合 Computer 的任务、技能、记忆和工具执行主动工作，并与其他 Teammates 及 Slack 中的同事协作。公告称该功能现向网页端 Max 用户提供。",
+          "whyItMatters": "编辑解读：从单次问答走向持续任务后，团队需要明确触发条件、可调用工具和结果复核责任。",
+          "caveat": "本条依据官方账号的公开镜像；产品与帮助页面本次无法读取，未独立核验其全部功能、定价或企业权限范围。镜像显示 11 月 5 日 17:05 UTC，与帖子 ID 推算的分钟一致。 X 原帖未直连核验；通过公开镜像或摘录核对正文。精确发布时间由 X status ID 推算，不等同于直接读取 X 页面时间；不发布互动量或热度排名。 X 帖时间：2026-11-05 17:05:47 UTC（北京时间 2026-11-06 01:05:47），由帖子 ID 推算。",
+          "sourcePublishedDate": "2026-11-05",
+          "sourcePublishedAt": "2026-11-05T17:05:47.855Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-05",
+          "verifiedAt": "2026-11-06T00:07:34Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/perplexity_ai/status/2118389326459670825",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "官方账号原帖公开镜像",
+              "url": "https://teapawt.net/perplexity_ai/status/2118389326459670825",
+              "type": "mirror"
+            },
+            {
+              "label": "公告收录记录（辅助核对发布时间）",
+              "url": "https://forck.live/items/32213-introducing-teammates",
+              "type": "mirror"
+            }
+          ]
+        },
+        {
+          "id": "metr-anthropic-rd-acceleration",
+          "category": "AI 研究与治理",
+          "title": "METR 发布 Anthropic 研发加速评估，同时披露证据限制",
+          "summary": "METR 发布对 Anthropic 内部 AI 研发进展的评估，认为 AI 使用可能显著加快研发，并讨论约两倍加速的判断。报告依赖内部信息，公开版本的重要证据受到删节。",
+          "whyItMatters": "编辑解读：评估 AI 对研发的影响，需要区分能力指标变化、因果归因和公开可复核证据，不能只引用一个加速倍数。",
+          "caveat": "约两倍是带有高不确定性的总体判断，不是对所有研发环节的直接测量；不能据此认定已经实现自主递归自我提升。METR 明确说明关键材料删节限制了公众复核。 X 原帖未直连核验；通过公开镜像或摘录核对正文。精确发布时间由 X status ID 推算，不等同于直接读取 X 页面时间；不发布互动量或热度排名。 X 帖时间：2026-11-05 18:36:37 UTC（北京时间 2026-11-06 02:36:37），由帖子 ID 推算。",
+          "sourcePublishedDate": "2026-11-05",
+          "sourcePublishedAt": "2026-11-05T18:36:37.484Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-05",
+          "verifiedAt": "2026-11-06T00:07:34Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/metr_evals/status/2118412183860351084",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "METR 官方评估报告",
+              "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+              "type": "official"
+            },
+            {
+              "label": "METR 官方账号公开摘录（11 月 5 日页面）",
+              "url": "https://www.techmeme.com/",
+              "type": "mirror"
+            }
+          ]
+        },
+        {
+          "id": "claude-personal-finance-us-beta",
+          "category": "AI 产品与数据权限",
+          "title": "Claude 在美国测试个人财务功能，账户访问限于只读",
+          "summary": "Claude 推出 Personal Finance 美国 beta。用户可选择经 Plaid 连接账户，让 Claude 根据余额和交易回答财务问题；功能面向美国 Pro、Max 和 Ultra 用户逐步推出。",
+          "whyItMatters": "编辑解读：这为敏感数据助手提供了清晰的权限设计案例：读取和解释账户信息，与实际执行资金操作应分开。",
+          "caveat": "目前为美国 beta，不代表全球可用。官方声明访问只读，Claude 不能转移、管理或投资用户资金；此新闻不构成个人投资建议。 X 原帖未直连核验；通过公开镜像或摘录核对正文。精确发布时间由 X status ID 推算，不等同于直接读取 X 页面时间；不发布互动量或热度排名。 X 帖时间：2026-11-05 18:00:35 UTC（北京时间 2026-11-06 02:00:35），由帖子 ID 推算。",
+          "sourcePublishedDate": "2026-11-05",
+          "sourcePublishedAt": "2026-11-05T18:00:35.273Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-05",
+          "verifiedAt": "2026-11-06T00:07:34Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/claudeai/status/2118403114890137895",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Claude 官方产品说明",
+              "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
+              "type": "official"
+            },
+            {
+              "label": "Claude 官方账号公开摘录（11 月 5 日页面）",
+              "url": "https://www.techmeme.com/",
+              "type": "mirror"
+            }
+          ]
+        },
+        {
+          "id": "google-gemini-omni-1-2-flash",
+          "category": "AI 多模态模型",
+          "title": "Google 更新 Gemini Omni 1.2 Flash，支持更长视频与多轮编辑",
+          "summary": "Google 介绍 Gemini Omni 1.2 Flash，将视频生成与编辑长度上限提高到 15 秒，改进画面连贯性并支持多轮编辑。官方表示，开发者 API 的 720p 视频价格较上一代降低 30%，为每秒 0.07 美元。",
+          "whyItMatters": "编辑解读：更长的连续片段与较低单位成本，可能减少短视频工作流中的拼接与迭代成本，实际收益仍需用自己的素材测试。",
+          "caveat": "质量改进和降价由 Google 官方披露，价格适用于所述 API 规格，不应泛化到所有地区、渠道或套餐。镜像另显示 11 月 5 日 17:08 UTC。 X 原帖未直连核验；通过公开镜像或摘录核对正文。精确发布时间由 X status ID 推算，不等同于直接读取 X 页面时间；不发布互动量或热度排名。 X 帖时间：2026-11-05 17:08:19 UTC（北京时间 2026-11-06 01:08:19），由帖子 ID 推算。",
+          "sourcePublishedDate": "2026-11-05",
+          "sourcePublishedAt": "2026-11-05T17:08:19.243Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-05",
+          "verifiedAt": "2026-11-06T00:07:34Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/GoogleAI/status/2118389961426874879",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Google 官方发布说明",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+              "type": "official"
+            },
+            {
+              "label": "Google AI 原帖公开镜像（11 月 5 日快照）",
+              "url": "https://grossretention.com/on-x",
+              "type": "mirror"
+            },
+            {
+              "label": "带 UTC 时间的原帖公开镜像",
+              "url": "https://teapawt.net/GoogleAI/status/2118389961426874879",
+              "type": "mirror"
+            }
+          ]
+        }
+      ],
+      "trends": {
+        "status": "unavailable",
+        "items": [],
+        "reason": "无法可靠给出涨势最快的 10 个 AI 话题：缺少同一采样范围、可比较时间窗口及带时间戳的连续互动量或提及量观测。本期不把编辑精选、单次计数或第三方榜单冒充涨幅。"
+      }
+    },
+    {
       "date": "2026-11-05",
       "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-05",
       "status": "published",
