@@ -55,6 +55,17 @@ def validate_data(data):
                 if verification == 'x-mirror': require(any(s.get('type') == 'mirror' for s in item['sources']), 'Mirror source must be disclosed')
             else:
                 require(item.get('xPostUrl') is None, 'Official-only item cannot imply X verification')
+            if issue.get('contentFormat') == 'inline-reading-v1':
+                require('reading' in item, 'Inline issue requires reading for every item')
+            if 'reading' in item:
+                reading = item['reading']
+                require(isinstance(reading, dict), 'reading must be an object')
+                for key in ['background', 'sourceSummary', 'commentary']:
+                    paragraphs = reading.get(key)
+                    require(isinstance(paragraphs, list) and paragraphs and all(isinstance(p, str) and p.strip() for p in paragraphs), f'reading {key} must contain nonempty text')
+                require(isinstance(reading.get('updatedAt'), str), 'reading needs an update timestamp')
+                stamp = datetime.datetime.fromisoformat(reading['updatedAt'].replace('Z', '+00:00'))
+                require(stamp.tzinfo is not None, 'reading timestamp needs timezone')
             if 'article' in item:
                 article = item['article']
                 require(isinstance(article, dict), 'Article must be an object')

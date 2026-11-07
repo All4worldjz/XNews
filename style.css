@@ -3,3 +3,16 @@
 body{overflow-x:clip}
 
 html{overflow-x:clip}
+
+/* Expanded reporting stays inside each news card, including on phones. */
+.inline-reading{margin:22px 0;overflow-wrap:anywhere}
+.reading-note,.reading-updated{font-size:11px;line-height:1.8;color:var(--muted)}
+.reading-note{border-top:1px solid var(--line);padding-top:16px}
+.reading-section{margin:22px 0}
+.reading-section h4{font-size:15px;line-height:1.6;letter-spacing:.3px;margin:0 0 12px;color:var(--red)}
+.reading-section p{font-size:15px;line-height:2;letter-spacing:.1px;margin:0 0 14px;color:#39362f}
+.reading-background{border-left:2px solid var(--line);padding-left:18px}
+.reading-commentary{border-left:3px solid var(--gold);background:#e8dfcd;padding:20px}
+.reading-commentary h4{color:#705522}
+.reading-commentary p:last-child{margin-bottom:0}
+@media(max-width:700px){.reading-section p{font-size:15px;line-height:1.95}.reading-commentary{padding:17px}.reading-background{padding-left:14px}}

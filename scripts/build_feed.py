@@ -34,6 +34,13 @@ def description(issue, item):
                        f"事件日期：{item.get('eventDate') or '未确认'}",
                        f"核验时间：{item.get('verifiedAt') or '未核验'}"])
     content = ''.join(f'<p>{escape(str(value))}</p>' for value in paragraphs)
+    reading = item.get('reading')
+    if reading:
+        content += '<p>依据下方署名来源独立整理，非逐字全文转载。背景帮助理解；解读为 XNews 观点，不代表原作者结论。</p>'
+        for key, title in [('background', '先看懂背景'), ('sourceSummary', '原文要点 · 中文整理'), ('commentary', 'XNews 解读')]:
+            content += f'<h2>{title}</h2>'
+            content += ''.join(f'<p>{escape(paragraph)}</p>' for paragraph in reading[key])
+        content += f'<p>正文整理更新：{escape(reading["updatedAt"])}</p>'
     for number, source in enumerate(item.get('sources', []),1):
         url = source['url']
         if urlsplit(url).scheme != 'https' or not urlsplit(url).netloc:
