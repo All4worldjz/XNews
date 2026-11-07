@@ -6,7 +6,31 @@
     <description>XNews 编辑精选，非 X 全站热榜。区分 X 原帖核验、镜像线索与官方来源；来源日期与简报日期分别标注。</description>
     <language>zh-CN</language>
     <atom:link href="https://all4worldjz.github.io/XNews/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Anthropic 分享 Agent 记忆工程：把会话记录整理为可检索知识</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-07#anthropic-agent-memory-components</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 3 条 AI 与 Enterprise Agentic AI 编辑精选，按编辑顺序展示，不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-06 08:00 至 2026-11-07 08:00（UTC 2026-11-06T00:00:00Z 至 2026-11-07T00:00:00Z）。X 原帖直连核验数为 0：正文经第三方公开镜像读取，并交叉核对可读取的官方资料；Hy4 条目合并两项不同平台评测，分别披露口径。精确帖子时间由 X status ID 推算，镜像另提供分钟级时间。本期不发布互动量；已报道的 Box 公告不重复收录，不足十条不凑榜。缺少覆盖完整 24 小时、同一口径的连续观测，无法可靠给出热点涨速 Top 10。&lt;/p&gt;&lt;p&gt;Anthropic 介绍利用会话间的离线计算核对原始记录、纠正错误并整理记忆的工程方法。在约 35 万份内部文档、25 道问题的小规模测试中，搜索加整理后的 wiki 得分为 61%，仅搜索为 53%，每题约少用 2 万 tokens。&lt;/p&gt;&lt;p&gt;编辑解读：长期运行的企业 Agent 需要的不只是保留聊天记录，还包括可追溯的知识整理、错误修正和检索评估。&lt;/p&gt;&lt;p&gt;这是工程研究与厂商内部实验，不是新模型发布或全面上线功能；样本较小，不同任务和模型的收益可能不同。X 原帖未直连核验；内容通过第三方公开镜像读取，并与可读取的官方资料交叉核对。精确时间由 X status ID 推算，镜像另提供分钟级时间；不发布互动量或热度排名。 X 帖时间为 11 月 6 日 21:16 UTC。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-07（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-06&lt;/p&gt;&lt;p&gt;事件日期：2026-11-06&lt;/p&gt;&lt;p&gt;核验时间：2026-11-07T00:01:05Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://www.anthropic.com/research/components-of-agent-memory"&gt;Anthropic 官方工程研究&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://teapawt.net/AnthropicAI/status/2118814753154064501"&gt;Anthropic 原帖公开镜像（含 UTC 时间）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/AnthropicAI/status/2118814753154064501"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>Enterprise Agentic AI</category>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-07#anthropic-agent-memory-components</guid>
+    </item>
+    <item>
+      <title>OpenAI 与 Ligo 发布 BioBasicsBench，评估 Agent 的日常实验数据分析</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-07#openai-ligo-biobasicsbench</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 3 条 AI 与 Enterprise Agentic AI 编辑精选，按编辑顺序展示，不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-06 08:00 至 2026-11-07 08:00（UTC 2026-11-06T00:00:00Z 至 2026-11-07T00:00:00Z）。X 原帖直连核验数为 0：正文经第三方公开镜像读取，并交叉核对可读取的官方资料；Hy4 条目合并两项不同平台评测，分别披露口径。精确帖子时间由 X status ID 推算，镜像另提供分钟级时间。本期不发布互动量；已报道的 Box 公告不重复收录，不足十条不凑榜。缺少覆盖完整 24 小时、同一口径的连续观测，无法可靠给出热点涨速 Top 10。&lt;/p&gt;&lt;p&gt;BioBasicsBench 用 100 项日常湿实验分析任务，测试 AI Agent 能否理解凝胶图、显微图像和测序读数等原始数据，发现实验错误，并在证据不足时避免强行下结论。任务采用科学家制定的细分评分标准。&lt;/p&gt;&lt;p&gt;编辑解读：科研助手的可靠性需要在真实、含糊甚至相互冲突的实验材料上检验，答出一个结论还不够，识别无效对照和证据边界同样重要。&lt;/p&gt;&lt;p&gt;本条是评测集发布，不是新模型发布。官方模型结果属于厂商评测，按可获得分值的平均比例计算，不等于任务成功率，也不能代替实验验证或专家复核。X 原帖未直连核验；内容通过第三方公开镜像读取，并与可读取的官方资料交叉核对。精确时间由 X status ID 推算，镜像另提供分钟级时间；不发布互动量或热度排名。 X 帖时间为 11 月 6 日 19:08 UTC。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-07（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-06&lt;/p&gt;&lt;p&gt;事件日期：2026-11-06&lt;/p&gt;&lt;p&gt;核验时间：2026-11-07T00:01:05Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"&gt;OpenAI 官方评测说明&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://teapawt.net/OpenAI/status/2118782708767965238"&gt;OpenAI 原帖公开镜像（含 UTC 时间）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/OpenAI/status/2118782708767965238"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>AI 研究与评测</category>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-07#openai-ligo-biobasicsbench</guid>
+    </item>
+    <item>
+      <title>Arena 与 OpenDesign 更新 Hy4 评测，展示任务质量、成本与耗时的取舍</title>
+      <link>https://all4worldjz.github.io/XNews/?date=2026-11-07#hy4-agent-design-evaluations</link>
+      <description>&lt;p&gt;X 镜像记录 · 原帖未直连核验&lt;/p&gt;&lt;p&gt;本期收录 3 条 AI 与 Enterprise Agentic AI 编辑精选，按编辑顺序展示，不是 X 全站热度 Top-10。采样窗口为北京时间 2026-11-06 08:00 至 2026-11-07 08:00（UTC 2026-11-06T00:00:00Z 至 2026-11-07T00:00:00Z）。X 原帖直连核验数为 0：正文经第三方公开镜像读取，并交叉核对可读取的官方资料；Hy4 条目合并两项不同平台评测，分别披露口径。精确帖子时间由 X status ID 推算，镜像另提供分钟级时间。本期不发布互动量；已报道的 Box 公告不重复收录，不足十条不凑榜。缺少覆盖完整 24 小时、同一口径的连续观测，无法可靠给出热点涨速 Top 10。&lt;/p&gt;&lt;p&gt;Arena 在 11 月 6 日的帖子中依据逾 1.2 万次真实任务会话，报告 Hy4 的净改善指标约为 +5.4%。同日 OpenDesign 的 23 模型设计评测中，Hy4 平均 90.0 分、估计每设计 0.227 美元、平均耗时 15.2 分钟；GPT-6.1 Sol 对应为 90.1 分、0.382 美元和 6.2 分钟。&lt;/p&gt;&lt;p&gt;编辑解读：企业选择任务模型时，应同时比较目标任务的质量、总成本和等待时间；不同评测的分数与成本口径不能直接合成一张通用排名。&lt;/p&gt;&lt;p&gt;两项结果来自各自平台的任务分布，不代表所有 Agent 任务。Arena 当前榜上 Hy4 与 Kimi 的净改善区间明显重叠，不能据此断言显著领先；OpenDesign 的质量分排序与综合排序不同，费用按价格与 token 用量估算。X 原帖未直连核验；内容通过第三方公开镜像读取，并与可读取的官方资料交叉核对。精确时间由 X status ID 推算，镜像另提供分钟级时间；不发布互动量或热度排名。 Arena 帖为 11 月 6 日 00:30 UTC，OpenDesign 帖为同日 09:04 UTC。&lt;/p&gt;&lt;p&gt;简报发布日期：2026-11-07（UTC，日期精度）&lt;/p&gt;&lt;p&gt;来源发布日期：2026-11-06&lt;/p&gt;&lt;p&gt;事件日期：2026-11-06&lt;/p&gt;&lt;p&gt;核验时间：2026-11-07T00:01:05Z&lt;/p&gt;&lt;p&gt;来源 [1]：&lt;a href="https://arena.ai/leaderboard/agent"&gt;Arena 官方 Agent 评测榜&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [2]：&lt;a href="https://teapawt.net/arena/status/2118501201847423358"&gt;Arena 原帖公开镜像（含 UTC 时间）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [3]：&lt;a href="https://open-design.ai/llm-arena-for-design/"&gt;OpenDesign 官方设计评测与方法&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [4]：&lt;a href="https://teapawt.net/OpenDesignDevs/status/2118630682452996463"&gt;OpenDesign 原帖公开镜像（含 UTC 时间）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;来源 [5]：&lt;a href="https://x.com/OpenDesignDevs/status/2118630682452996463"&gt;OpenDesign X 原帖链接（未直连核验）&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://x.com/arena/status/2118501201847423358"&gt;X 原帖链接（未直连核验）&lt;/a&gt; · 互动数据：未获取&lt;/p&gt;</description>
+      <category>Agent 模型评测</category>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://all4worldjz.github.io/XNews/?date=2026-11-07#hy4-agent-design-evaluations</guid>
+    </item>
     <item>
       <title>OpenAI 发布 GPT-6 Cyber，先向获准的安全团队开放</title>
       <link>https://all4worldjz.github.io/XNews/?date=2026-11-06#openai-gpt-6-cyber</link>
