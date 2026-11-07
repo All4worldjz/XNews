@@ -7,14 +7,19 @@ const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/issues.jso
 const issue = data.issues[0];
 const item = issue.items[0];
 item.reading = {background: ['背景 needle_background'], sourceSummary: ['正文 needle_summary <script>alert(1)</script>'], commentary: ['观点 needle_commentary'], updatedAt: '2026-11-07T11:00:00Z'};
+let fetchRequest;
 const nodes = new Map();
 function node(id) {
   if (!nodes.has(id)) nodes.set(id, {value: id === 'category' ? 'all' : '', innerHTML: '', textContent: '', events: {}, addEventListener(type, fn) {this.events[type] = fn;}, querySelectorAll() {return [];}});
   return nodes.get(id);
 }
-const context = {document: {getElementById: node}, URL, URLSearchParams, location: {href: 'https://example.org/XNews/', search: '', hash: ''}, history: {pushState() {}}, window: {addEventListener() {}}, fetch: async () => ({ok: true, json: async () => data}), navigator: {}};
+const context = {document: {getElementById: node}, URL, URLSearchParams, location: {href: 'https://example.org/XNews/', search: '', hash: ''}, history: {pushState() {}}, window: {addEventListener() {}}, fetch: async (url, options) => {fetchRequest = {url, options}; return {ok: true, json: async () => data};}, navigator: {}};
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../app.js'), 'utf8'), context);
 setImmediate(() => {
+  assert.equal(fetchRequest.options?.cache, 'no-cache', 'news data must revalidate after deployment');
+  assert.ok(fetchRequest.url.includes('v=inline-reading-v1'), 'new data format needs a fresh cache key');
+  const index = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+  assert.ok(index.includes('app.js?v=inline-reading-v1'), 'new renderer needs a fresh cache key');
   const html = node('articles').innerHTML;
   assert.ok(html.includes('先看懂背景'), 'background must render inside the card');
   assert.ok(html.includes('原文要点 · 中文整理'), 'source summary must render inside the card');
