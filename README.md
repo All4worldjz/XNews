@@ -56,3 +56,9 @@ verification 支持 verified（直连 X 已核验）、x-mirror（第三方镜�
 新增期数请使用 `contentFormat: "inline-reading-v1"`，并为每条提供上述三个非空段落数组与带时区的 `reading.updatedAt`。解释必要术语、事情经过、数字口径、证据边界和实际影响，避免只重复导语或给一句泛泛点评。来源段用 `[1]` 等编号对应本条 `sources`；背景中的假设例子和评论须明确与来源事实区分。未能读取来源时如实披露，不补写猜测。
 
 不得把未经授权的受版权保护全文直接转载或逐段翻译；采用适量短摘录及原创整理，保留作者、机构与原文链接。旧期、独立专题文章与 RSS GUID 保持不变。本次仅补充 11 月 7 日三条新闻，不声称旧期已经全部补写。站内可读不等于已验证中国大陆所有网络都能访问 GitHub Pages。
+
+## 高管简报同步与同日日报合并
+
+每日高管简报在同日期 issue.items 中使用固定 `id: "executive-briefing"`、`category: "高管简报"`，正文使用现有 `article.sections`、`visuals`、`tables`，生成 `articles/YYYY-MM-DD-executive-briefing.html` 与 RSS。按日期加 ID 幂等追加或更新，不创建重复日期的 issue。
+
+任何当日 AI 日报或高管简报发布都须先读取最新 main，合并同日 issue.items，不得整期覆盖对方已存在的内容；保持其他条目正文、日期、ID 和 RSS GUID 不变。原简报转换保留来源日期、信息截点、判断、建议及不确定性，不把同步时间称为新增核验；移除 UI 标记与私有链接，使用原创图表并标清金额与期限口径。发布前运行上述全部构建及校验步骤。
