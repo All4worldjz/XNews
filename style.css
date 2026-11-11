@@ -108,3 +108,6 @@ footer.wrap{padding-top:24px}
  footer.wrap{padding-bottom:28px}
 }
 @media print{.site-header,.mobile-dock,.page-end-nav,.edition-pagination{display:none}body{padding-bottom:0}.news-card{break-inside:auto}}
+/* Anchors use scroll-margin once; do not add it to root scroll-padding. */
+html{scroll-padding-top:0}
+@media(max-height:500px){.site-header{position:relative}}

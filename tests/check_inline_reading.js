@@ -13,7 +13,7 @@ function node(id) {
   if (!nodes.has(id)) nodes.set(id, {value: id === 'category' ? 'all' : '', innerHTML: '', textContent: '', events: {}, addEventListener(type, fn) {this.events[type] = fn;}, querySelectorAll() {return [];}, scrollIntoView() {this.scrolled = true;}});
   return nodes.get(id);
 }
-const context = {document: {getElementById: node}, URL, URLSearchParams, location: {href: 'https://example.org/XNews/', search: '', hash: ''}, history: {pushState() {}}, window: {addEventListener() {}}, fetch: async (url, options) => {fetchRequest = {url, options}; return {ok: true, json: async () => data};}, navigator: {}};
+const context = {document: {getElementById: node}, URL, URLSearchParams, location: {href: 'https://example.org/XNews/', search: '', hash: ''}, history: {pushState() {}}, window: {events: {}, addEventListener(type, fn) {this.events[type] = fn;}}, fetch: async (url, options) => {fetchRequest = {url, options}; return {ok: true, json: async () => data};}, navigator: {}};
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../app.js'), 'utf8'), context);
 setImmediate(() => {
   assert.equal(fetchRequest.options?.cache, 'no-cache', 'news data must revalidate after deployment');
@@ -50,5 +50,20 @@ setImmediate(() => {
   assert.equal(node('issue-date').textContent, issue.date + ' · ' + data.timezone);
   for (let i = 1; i < data.issues.length; i++) node('older-issue').onclick();
   assert.equal(node('older-issue').disabled, true, 'oldest issue cannot move older');
+  node('search').value = 'no_such_news_12345';
+  node('search').events.input();
+  context.location.search = '?date=' + issue.date;
+  context.window.events.popstate();
+  assert.equal(node('search').value, '', 'Back across editions clears search');
+  assert.equal(node('category').value, 'all', 'Back across editions clears category');
+  assert.ok(node('result-count').textContent.startsWith(issue.items.length + ' 条'));
+  node('search').value = 'needle_background';
+  node('search').events.input();
+  context.window.events.popstate();
+  assert.equal(node('search').value, 'needle_background', 'same-edition history preserves search');
+  context.location.search = '?date=' + data.issues[1].date;
+  context.window.events.popstate();
+  assert.equal(node('search').value, '', 'Forward across editions also clears search');
+  assert.ok(node('result-count').textContent.startsWith(data.issues[1].items.length + ' 条'));
   console.log('PASS: inline reading, escaping, searching and reset');
 });
