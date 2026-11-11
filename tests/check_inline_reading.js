@@ -17,9 +17,9 @@ const context = {document: {getElementById: node}, URL, URLSearchParams, locatio
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../app.js'), 'utf8'), context);
 setImmediate(() => {
   assert.equal(fetchRequest.options?.cache, 'no-cache', 'news data must revalidate after deployment');
-  assert.ok(fetchRequest.url.includes('v=reading-experience-v2'), 'new data format needs a fresh cache key');
+  assert.ok(fetchRequest.url.includes('v=reading-experience-v3'), 'new data format needs a fresh cache key');
   const index = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
-  assert.ok(index.includes('app.js?v=reading-experience-v2'), 'new renderer needs a fresh cache key');
+  assert.ok(index.includes('app.js?v=reading-experience-v3'), 'new renderer needs a fresh cache key');
   const html = node('articles').innerHTML;
   assert.ok(html.includes('先看懂背景'), 'background must render inside the card');
   assert.ok(html.includes('原文要点 · 中文整理'), 'source summary must render inside the card');
