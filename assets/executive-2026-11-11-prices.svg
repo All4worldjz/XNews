@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="880" viewBox="0 0 1440 880" role="img" aria-labelledby="title desc">
+<title id="title">五个价格指标，不是一张成本单</title>
+<desc id="desc">2026年10月全国价格同比涨幅：CPI0.7%，核心CPI0.8%，PPI5.7%，工业生产者购进价格7.9%，计算机通信及其他电子设备制造业出厂价格5.9%。不同口径不能相加或计算利润差。</desc>
+<rect width="1440" height="880" rx="24" fill="#0e1a2b"/>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;} .light{fill:#f5f7fb} .muted{fill:#a9bdd2} .teal{fill:#5de1c5}</style>
+<text x="54" y="65" font-size="23" font-weight="600" class="teal">XNEWS / EXECUTIVE BRIEFING · 2026.11.11</text>
+<text x="54" y="138" font-size="52" font-weight="700" class="light">五个价格指标，不是一张成本单</text>
+<text x="54" y="187" font-size="25" font-weight="400" class="muted">2026年10月 · 全国同比涨幅 · %</text>
+<rect x="54" y="235" width="420" height="235" rx="18" fill="#192b42"/>
+<text x="81" y="278" font-size="27" font-weight="600" class="light">CPI</text>
+<text x="81" y="360" font-size="65" font-weight="700" class="teal">+0.7</text>
+<text x="81" y="441" font-size="23" font-weight="400" class="muted">居民消费价格</text>
+<rect x="500" y="235" width="420" height="235" rx="18" fill="#192b42"/>
+<text x="527" y="278" font-size="27" font-weight="600" class="light">核心CPI</text>
+<text x="527" y="360" font-size="65" font-weight="700" class="teal">+0.8</text>
+<text x="527" y="441" font-size="23" font-weight="400" class="muted">扣除食品和能源</text>
+<rect x="946" y="235" width="440" height="235" rx="18" fill="#192b42"/>
+<text x="973" y="278" font-size="27" font-weight="600" class="light">PPI</text>
+<text x="973" y="360" font-size="65" font-weight="700" class="teal">+5.7</text>
+<text x="973" y="441" font-size="23" font-weight="400" class="muted">工业生产者出厂价格</text>
+<rect x="54" y="495" width="643" height="210" rx="18" fill="#192b42"/>
+<text x="81" y="538" font-size="27" font-weight="600" class="light">工业生产者购进价格</text>
+<text x="81" y="620" font-size="65" font-weight="700" class="teal">+7.9</text>
+<text x="81" y="676" font-size="23" font-weight="400" class="muted">工业投入品价格</text>
+<rect x="723" y="495" width="663" height="210" rx="18" fill="#192b42"/>
+<text x="750" y="538" font-size="27" font-weight="600" class="light">电子设备制造业出厂价格</text>
+<text x="750" y="620" font-size="65" font-weight="700" class="teal">+5.9</text>
+<text x="750" y="676" font-size="23" font-weight="400" class="muted">计算机、通信及其他电子设备</text>
+<text x="54" y="757" font-size="28" font-weight="500" class="light">不同范围与权重，不合计、不算利润差，也不表示云服务价格上涨。</text>
+<text x="54" y="809" font-size="22" font-weight="400" class="muted">数据来源：国家统计局2026年11月9日CPI、PPI公告。同比基准：2025年10月。</text>
+<text x="54" y="848" font-size="22" font-weight="400" class="muted">原创数据示意。项目决策仍须使用具体设备报价、当地能源合同与维保条款。</text>
+</svg>
