@@ -4,6 +4,262 @@
   "timezone": "UTC",
   "issues": [
     {
+      "date": "2026-11-11",
+      "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-11",
+      "status": "published",
+      "contentFormat": "inline-reading-v1",
+      "coverage": "本期收录 5 条直接核验 X 原帖并与官方资料交叉核对的编辑精选，重点关注 Enterprise Agentic AI：IBM 与微软 Imagine Enterprise、Businesses in ChatGPT、Claude 白板/表格/Data、Gemini 4 Carbon 扩大开放，以及 AMD 第六代 EPYC。采样窗口为北京时间 2026-11-10 08:00 至 2026-11-11 08:00（UTC 2026-11-10T00:00:00Z 至 2026-11-11T00:00:00Z，结束时刻不包含）。原帖通过普通公开 HTML 核对正文和原生时间，部分官方文章仅公开搜索索引可读，逐条披露。按编辑顺序展示，不代表 X 热度排名，也不声称完整覆盖 X。每条提供通俗背景、原创中文梳理和独立评论；不逐字全文转载，不采用互动数据，不足十条不凑数。缺少固定样本和跨时间同口径计数，热点涨速 Top 10 不可用。",
+      "windowStart": "2026-11-10T00:00:00Z",
+      "windowEnd": "2026-11-11T00:00:00Z",
+      "items": [
+        {
+          "id": "ibm-microsoft-imagine-enterprise",
+          "category": "Enterprise Agentic AI",
+          "title": "IBM 与微软推出 Imagine Enterprise，把行业 Agent 与工程交付放在一起",
+          "summary": "IBM 与微软宣布面向行业流程的 Imagine Enterprise，结合 IBM Consulting 的 6000 多项预置 AI agents 及资产和微软技术，并为符合条件的项目提供前线工程支持。初期覆盖金融服务、保险和零售。",
+          "whyItMatters": "编辑解读：预置能力可以缩短起步时间，企业的实际收益仍取决于数据接入、流程责任和上线后的运维，而不是模板数量。",
+          "caveat": "X 发帖时间为 2026-11-10 13:06:50 UTC（北京时间 21:06:50）。已通过普通公开 HTTP 读取 Wall St Engine 原帖的完整正文与 article:published_time；该账号为新闻账号，不是 IBM 官方账号，事实另经 IBM 公告交叉核对。搜索阅读器访问 X 返回 403；IBM 公告普通 HTTP 虽返回 200，正文仅显示 Site Unavailable，本次采用官方搜索索引的正文与 11 月 10 日日期。6000 多项是 agents 与 assets 的合计，不能当成已在客户生产环境部署的 6000 个 Agent。SEI 表述为探索相关技术，不是已完成本平台部署。未独立验证交付效果，也未采用互动数字。",
+          "sourcePublishedDate": "2026-11-10",
+          "sourcePublishedAt": "2026-11-10T13:06:50.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-10",
+          "verifiedAt": "2026-11-10T23:59:21Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/wallstengine/status/2120141130616713347",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Wall St Engine X 原帖：完整正文与 HTML 时间直接核验",
+              "url": "https://x.com/wallstengine/status/2120141130616713347",
+              "type": "x-original"
+            },
+            {
+              "label": "IBM 官方公告：11 月 10 日；搜索索引可读，直连仅返回不可用页",
+              "url": "https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "企业 Agent 要执行真实业务，通常需要接入历史系统、企业数据和审批流程。即使模型能够理解指令，谁能读取哪些资料、谁批准写入、失败后如何恢复，仍要由组织设计。",
+              "前线工程师会与客户团队一起完成适配和部署。这类支持可以帮助处理行业差异，但项目适用条件、验收和持续维护责任仍需在合作中明确。"
+            ],
+            "sourceSummary": [
+              "11 月 10 日，Wall St Engine 在 X 报道 Imagine Enterprise。IBM 官方公告确认，该平台面向行业流程的 Agent 构建、运行与治理；预置能力来自 IBM Consulting，微软提供 AI、数据、云与安全技术。[1][2]",
+              "官方将 6000 多项 agents 及 assets、适配现有企业系统和业务知识连接列为平台基础。初期行业为金融服务、保险和零售，双方为符合条件的项目提供前线工程支持。[2]",
+              "客户可由 IBM Consulting 代为部署运营，或共同实施，也有自主管理选项。公告提及 SEI 正在探索相关技术，尚不足以证明该平台在 SEI 已完成生产落地。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：这是一种把软件平台、行业资产和服务交付组合起来的供给方式。评估重点应从“有多少 Agent”转到“一个具体流程如何接入、谁负责异常、交付后谁能维护”。相同模板在不同银行或零售商的有效性，可能相差很大。",
+              "采购前可挑选一条有明确结果的流程，建立人工基线，记录每次人工接管、返工与权限提升。把这些成本计入验收，比只比较演示完成速度更有用。",
+              "企业还应检查配置、业务规则和审计记录能否导出。即使由供应商代运营，数据所有者也需要保留撤销权限、变更规则和替换服务的能力。"
+            ],
+            "updatedAt": "2026-11-11T00:02:06Z"
+          }
+        },
+        {
+          "id": "openai-businesses-chatgpt-beta",
+          "category": "Enterprise Agentic AI",
+          "title": "OpenAI 开放 Businesses in ChatGPT 测试：商家资料与客户 Agent 进入同一入口",
+          "summary": "Businesses in ChatGPT 进入 beta，企业可认领和维护资料、查看汇总洞察。Business Agents 先向符合条件的美国电商与线上服务企业开放，帮助用户了解商品和服务。",
+          "whyItMatters": "编辑解读：企业需要把商品与服务信息维护成可靠的数据来源，并清楚区分平台的独立回答、企业 Agent 的回答和广告。",
+          "caveat": "官方 X 原帖发表于 2026-11-10 18:06:42 UTC（北京时间 11 月 11 日 02:06:42），普通公开 HTTP 可读取正文及 article:published_time；搜索阅读器直连 X 受限。OpenAI 官方文章可直接读取，日期为 11 月 10 日。Business Hub 认领范围与 Business Agents 的准入范围不同，后者目前限符合条件的美国电商及线上服务企业。洞察为达到阈值后的汇总统计，官方称不向商家分享用户对话或 Business Agent 聊天记录。未验证具体商家资格、转化效果或地区覆盖；不将认领解释为购买推荐排名。",
+          "sourcePublishedDate": "2026-11-10",
+          "sourcePublishedAt": "2026-11-10T18:06:42.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-10",
+          "verifiedAt": "2026-11-10T23:59:21Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/OpenAI/status/2120216592395174382",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "OpenAI 官方 X 发布原帖：正文及 HTML 时间已核验",
+              "url": "https://x.com/OpenAI/status/2120216592395174382",
+              "type": "x-original"
+            },
+            {
+              "label": "OpenAI 官方介绍：Introducing Businesses in ChatGPT",
+              "url": "https://openai.com/index/introducing-businesses-chatgpt/",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "对话式购物或服务发现，需要模型拿到准确的企业资料。商品价格、库存或服务范围一旦过期，回答即使通顺，也可能让客户做出错误决定。企业因此需要维护信息的更新流程。",
+              "企业 Agent 是一个带有商家身份的问答入口。用户需要知道自己何时仍在听取平台的独立回答，何时已进入特定商家的服务对话，才能判断内容的立场与适用范围。"
+            ],
+            "sourceSummary": [
+              "OpenAI 宣布 Businesses in ChatGPT 进入测试。企业在 Business Hub 完成认领验证后，可以更新资料、提供商品信息，并查看被提及、网站点击等汇总洞察。[1][2]",
+              "符合条件的美国电商及线上服务企业可构建、测试和推出 Business Agent。用户从企业资料进入单独标识的对话；赞助入口也会与独立回答区分。[2]",
+              "官方说明，洞察设置了最低交互阈值，不把用户对话或 Agent 聊天记录提供给商家。资料认领在符合条件的 ChatGPT 可用地区开放，不能据此推断所有地区都能推出 Business Agent。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：这会把企业的客户触点进一步前移到用户提出问题的时刻。最先需要准备的是可信的商品与服务信息、更新责任人，以及遇到缺失信息时的回答边界。接入一个 Agent 并不能自动解决数据过期。",
+              "企业可以先用常见售前问题测试资料覆盖率，检查价格变化、缺货、退款政策和模糊需求。对无法确认的答案，明确转交人工或原网站，比让 Agent 猜测承诺更稳妥。",
+              "衡量效果时，应把平台内的汇总洞察与企业自己的业务结果分开。被提及或被点击不等于成交，隐私保护下不可见的数据也不应靠推测补齐。"
+            ],
+            "updatedAt": "2026-11-11T00:02:06Z"
+          }
+        },
+        {
+          "id": "claude-whiteboards-sheets-data",
+          "category": "Enterprise Agentic AI",
+          "title": "Claude 增加白板与表格，Data 正式发布；企业默认开关值得检查",
+          "summary": "Claude Whiteboards 与 Sheets 开始 beta，原 Dashboards 以 Claude Data 名称正式推出。团队可以在 Claude 内共同整理想法、编辑表格和查看业务数据，但不同产品、子功能与套餐的默认设置并不相同。",
+          "whyItMatters": "编辑解读：持续共编比一次性生成更接近企业工作流，也让共享权限、指标定义和变更记录变得更重要。",
+          "caveat": "Claude 官方 X 原帖发表于 2026-11-10 17:26:03 UTC（北京时间 11 月 11 日 01:26:03），普通公开 HTTP 读取正文和 article:published_time 成功，搜索阅读器直连受限。官方发布文章直连 403，11 月 10 日正文与日期通过公开搜索索引读取，并与官方帮助文档核对。Whiteboards、Sheets 为 beta；Data 整体正式可用，但 certified queries 和 live sharing 仍为 beta。Team 默认开启三项；Enterprise 的 Whiteboards、Sheets 默认关闭，公告称 Data 将于 11 月 19 日默认开启。具体组织配置可由管理员调整，未检查任何实际企业租户。",
+          "sourcePublishedDate": "2026-11-10",
+          "sourcePublishedAt": "2026-11-10T17:26:03.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-10",
+          "verifiedAt": "2026-11-10T23:59:21Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/claudeai/status/2120206365759094857",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Claude 官方 X 发布原帖：正文及 HTML 时间已核验",
+              "url": "https://x.com/claudeai/status/2120206365759094857",
+              "type": "x-original"
+            },
+            {
+              "label": "Claude 官方产品文章：11 月 10 日；通过搜索索引读取",
+              "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+              "type": "official"
+            },
+            {
+              "label": "Claude 官方帮助：Sheets 的功能、导出与管理员设置",
+              "url": "https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets",
+              "type": "official"
+            },
+            {
+              "label": "Claude 官方帮助：当前 beta 与研究预览功能",
+              "url": "https://support.claude.com/en/articles/14503520-available-beta-and-research-preview-features",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "一次生成文件，和多人长期维护同一份工作成果，需要不同的控制。团队共同使用表格或看板时，要能知道谁修改了什么、数字从哪里来，以及分享出去的内容是否持续更新。",
+              "“产品已正式发布”也可能与“其中某项功能仍在测试”同时成立。管理员应按具体功能核对可用性和数据要求，避免只看产品名称便放开全部业务资料。"
+            ],
+            "sourceSummary": [
+              "Claude 的 X 公告介绍 Whiteboards、Sheets 和 Data 三种工作方式。官方文章确认，前两项进入 beta，原 Dashboards 改名为 Data 并正式推出，面向付费计划。[1][2]",
+              "Sheets 支持共同编辑、可见的公式与变更提示，也可导出为 .xlsx 或 CSV。官方将其定位为较轻量的表格能力；涉及复杂电子表格需求时，仍需核对功能覆盖。[2][3]",
+              "Data 增加指标认证、共享和版本管理等能力，其中认证查询与实时共享仍为 beta。官方公告注明 Team 与 Enterprise 的默认开启策略不同，Enterprise 管理员尤其应检查 11 月 19 日 Data 默认开启安排。[2][4]"
+            ],
+            "commentary": [
+              "XNews 的判断：更重要的变化是让人和模型围绕同一份成果继续工作。企业可从项目追踪或低敏感度指标开始，观察模型修改是否容易审阅，团队能否恢复误改，以及导出后公式和格式是否完整。",
+              "认证指标应由负责业务口径的人审批。给一条查询加上认证标识，仍需要维护定义、适用日期和变更流程；否则统一界面可能让过时口径传播得更快。",
+              "上线检查还应覆盖分享对象、数据连接器权限和 beta 的使用范围。管理员默认开关是实际控制点，不能将某个套餐具备功能直接等同于组织已经批准使用。"
+            ],
+            "updatedAt": "2026-11-11T00:02:06Z"
+          }
+        },
+        {
+          "id": "google-gemini-4-carbon-access",
+          "category": "Enterprise Agentic AI",
+          "title": "Gemini 4 Carbon 扩大开放，长周期任务与多 Agent 协作成为重点",
+          "summary": "Google 将 Gemini 4 Carbon 扩展至付费 API 开发者、企业和 Ultra 用户，并预览 Antigravity 的 /swarm 多 Agent 协作。此次为扩大可用范围，模型此前已向部分网络安全防御团队开放。",
+          "whyItMatters": "编辑解读：长周期能力需要与预算、独立验证和工作区隔离一起评估；多 Agent 数量本身不是交付质量指标。",
+          "caveat": "Sundar Pichai 的 X 原帖原生发布时间为 2026-11-10 16:04:43 UTC（北京时间 11 月 11 日 00:04:43），普通公开 HTTP 读取完整正文与原生 publishedTime 成功。Google 官方文章直接读取成功，标注 11 月 10 日，元数据为 16:00 UTC。模型最初公告在 10 月 28 日，本条记录扩大开放，不称首次发布。/swarm 为预览；一般访问与通过 Fairwind Program 提供的网络安全能力须区分。公开版 API 初始价格优惠于 11 月 30 日结束，此后输入/输出价为每百万 token 4/20 美元。文章中的性能、成本比较和案例均非本次独立复现，不把单项榜单或厂商测试推广为所有业务表现。",
+          "sourcePublishedDate": "2026-11-10",
+          "sourcePublishedAt": "2026-11-10T16:04:43.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-10",
+          "verifiedAt": "2026-11-10T23:59:21Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/sundarpichai/status/2120185896469496180",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Sundar Pichai 官方 X 原帖：完整正文与原生发布时间已核验",
+              "url": "https://x.com/sundarpichai/status/2120185896469496180",
+              "type": "x-original"
+            },
+            {
+              "label": "Google 官方发布：Gemini 4 Carbon is now available",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "长周期 Agent 会连续规划、使用工具、检查结果并重试。较强的推理有可能解决更难的问题，也会消耗更多时间和 token。企业需要用完成标准判断何时继续探索、何时停止。",
+              "多 Agent 协作可以把设计、实现和验证分给不同执行者，但也会产生交接和同步成本。有效的评测应包含冲突修改、错误传播和验证失败，而不只演示一次顺利完成的任务。"
+            ],
+            "sourceSummary": [
+              "Sundar Pichai 在 X 宣布 Carbon 当日扩大开放，定位于复杂软件工程、网络安全及科学研究等持续任务。官方文章说明，此前两周已向部分 Fairwind 安全防御用户提供访问。[1][2]",
+              "此次入口包括 Google AI Studio 的 Gemini API、Gemini for business，以及 Ultra 用户的 Antigravity、Gemini App 和 Search AI Mode。公开版 Carbon 的初始 API 价为每百万输入/输出 token 2/10 美元；11 月 30 日优惠期结束后变为 4/20 美元。Carbon 会用更多 token 做深度探索。[2]",
+              "Google 同时预览 Antigravity 的 /swarm，允许模型在协同工作区中分工。文章仍建议多数日常软件工程和知识任务使用 Argon，复杂任务再选 Carbon。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：企业可以把 Carbon 当作困难任务的升级选项，而不必一次替换全部模型。先在内部任务集上比较完整交付的成本、耗时、返工和人工复核，再决定哪些任务值得调用。",
+              "长时间运行需要明确预算和终止条件。例如达到重试上限仍未通过测试，工作流应交给人处理。系统也要保留可恢复的检查点，避免一次中断让全部进展丢失。",
+              "多 Agent 的验证者应尽量使用独立的测试与证据，避免共同接受同一个错误假设。生产权限、密钥和敏感数据也应按任务分配，不能因为协作效率提升就扩大所有执行者的访问范围。"
+            ],
+            "updatedAt": "2026-11-11T00:02:06Z"
+          }
+        },
+        {
+          "id": "amd-epyc-6-agent-infrastructure",
+          "category": "AI 基础设施",
+          "title": "AMD 第六代 EPYC SP7 开始供货：Agent 的 CPU 工作负载进入基础设施规划",
+          "summary": "AMD 宣布基于 Zen 6 的第六代 EPYC SP7 正式可用，服务器厂商已开始供货，Azure 与 OCI 云实例仍属后续开放。官方把业务服务、GPU 主机和 Agent 沙箱列为不同的 CPU 负载。",
+          "whyItMatters": "编辑解读：Agent 不只消耗模型推理资源，还会运行代码、访问数据库和调用应用。容量规划需要把这些执行成本一起算进去。",
+          "caveat": "AMD 官方 X 原帖发表于 2026-11-10 17:02:17 UTC（北京时间 11 月 11 日 01:02:17），原帖完整正文与 article:published_time 已直接读取。AMD 新闻稿和资料页普通公开 HTTP 均返回 200，日期为 11 月 10 日；搜索阅读器曾无法打开。服务器平台供货与云实例开放时间不同，不能把 coming soon 写成 Azure/OCI 已全面可用。厂商性能倍数包含特定配置、内部测量或估算，本条不采用这些数字作一般性性能承诺。未运行硬件评测，也未核查地区库存或实际采购价格。",
+          "sourcePublishedDate": "2026-11-10",
+          "sourcePublishedAt": "2026-11-10T17:02:17.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-10",
+          "verifiedAt": "2026-11-10T23:59:21Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/AMD/status/2120200385520369828",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "AMD 官方 X 原帖：完整正文与 HTML 发布时间已核验",
+              "url": "https://x.com/AMD/status/2120200385520369828",
+              "type": "x-original"
+            },
+            {
+              "label": "AMD 官方新闻稿：第六代 EPYC SP7 正式可用",
+              "url": "https://newsroom.amd.com/news/6th-gen-epyc-lead-ai-enterprise-computing/",
+              "type": "official"
+            },
+            {
+              "label": "AMD 官方发布资料：产品状态与 Agent 基础设施定位",
+              "url": "https://newsroom.amd.com/press-kits/6th-gen-epyc-venice/",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "模型在 GPU 或其他加速器上生成结果之后，Agent 还可能需要检索资料、执行代码、运行测试和调用企业应用。这些步骤常由 CPU、内存、存储及网络共同支撑。只估算模型 token 费用，可能漏掉一部分基础设施支出。",
+              "沙箱是与其他任务隔离的执行环境。随着 Agent 并发增加，沙箱的启动、资源上限和清理会影响吞吐量，也会影响成本和安全。"
+            ],
+            "sourceSummary": [
+              "AMD 的 X 原帖和 11 月 10 日官方公告确认，第六代 EPYC SP7 基于 Zen 6，服务器厂商已开始供货，Azure 和 OCI 的相关云实例随后开放。[1][2]",
+              "官方把 CPU 需求分为通用企业服务、GPU 主机和 Agent 沙箱，并以不同配置应对密度、频率和带宽需要。发布资料也介绍 Helion 机架的部署选择。[2][3]",
+              "本条仅记录产品可用状态和架构定位，不复述不同测试配置下的性能倍数。云实例的实际上线地区、配额与价格，仍需在采用时逐项确认。"
+            ],
+            "commentary": [
+              "XNews 的判断：企业评估 Agent 平台时，应该测量每项任务在模型之外花了多少资源。编译、测试、浏览器执行或数据处理可能成为新的瓶颈，不同流程需要的 CPU 配置未必相同。",
+              "试点可以同时记录成功任务数、沙箱等待时间、内存占用和峰值并发，再与现有服务器比较。性能更高只有在业务真正利用起来、且能控制资源浪费时，才可能转化为较低的交付成本。",
+              "容量扩展也应与隔离措施同步。限制单个任务的 CPU、内存和运行时长，及时回收临时环境，并验证故障不会影响共享服务，通常比单纯增加可并发 Agent 数更值得优先验收。"
+            ],
+            "updatedAt": "2026-11-11T00:02:06Z"
+          }
+        }
+      ],
+      "trends": {
+        "status": "unavailable",
+        "reason": "数据不足：本期为公开网页编辑抽样，没有统一账号或话题全集，也没有同口径、跨时间点的可靠计数。单时点互动显示和第三方镜像数字不足以计算可比较的增长率，因此不发布“上升最快”Top 10、排名或互动数字。",
+        "items": []
+      }
+    },
+    {
       "date": "2026-11-10",
       "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-10",
       "status": "published",
