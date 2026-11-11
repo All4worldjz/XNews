@@ -10,16 +10,16 @@ item.reading = {background: ['背景 needle_background'], sourceSummary: ['正�
 let fetchRequest;
 const nodes = new Map();
 function node(id) {
-  if (!nodes.has(id)) nodes.set(id, {value: id === 'category' ? 'all' : '', innerHTML: '', textContent: '', events: {}, addEventListener(type, fn) {this.events[type] = fn;}, querySelectorAll() {return [];}});
+  if (!nodes.has(id)) nodes.set(id, {value: id === 'category' ? 'all' : '', innerHTML: '', textContent: '', events: {}, addEventListener(type, fn) {this.events[type] = fn;}, querySelectorAll() {return [];}, scrollIntoView() {this.scrolled = true;}});
   return nodes.get(id);
 }
 const context = {document: {getElementById: node}, URL, URLSearchParams, location: {href: 'https://example.org/XNews/', search: '', hash: ''}, history: {pushState() {}}, window: {addEventListener() {}}, fetch: async (url, options) => {fetchRequest = {url, options}; return {ok: true, json: async () => data};}, navigator: {}};
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../app.js'), 'utf8'), context);
 setImmediate(() => {
   assert.equal(fetchRequest.options?.cache, 'no-cache', 'news data must revalidate after deployment');
-  assert.ok(fetchRequest.url.includes('v=inline-reading-v1'), 'new data format needs a fresh cache key');
+  assert.ok(fetchRequest.url.includes('v=reading-experience-v2'), 'new data format needs a fresh cache key');
   const index = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
-  assert.ok(index.includes('app.js?v=inline-reading-v1'), 'new renderer needs a fresh cache key');
+  assert.ok(index.includes('app.js?v=reading-experience-v2'), 'new renderer needs a fresh cache key');
   const html = node('articles').innerHTML;
   assert.ok(html.includes('先看懂背景'), 'background must render inside the card');
   assert.ok(html.includes('原文要点 · 中文整理'), 'source summary must render inside the card');
@@ -40,5 +40,15 @@ setImmediate(() => {
   node('search').value = '';
   node('search').events.input();
   assert.ok(node('result-count').textContent.startsWith(issue.items.length + ' 条'));
+  assert.equal(node('newer-issue').disabled, true, 'latest issue cannot move newer');
+  assert.ok(node('edition-links').innerHTML.includes(item.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')));
+  node('older-issue').onclick();
+  assert.equal(node('issue-date').textContent, data.issues[1].date + ' · ' + data.timezone);
+  assert.equal(node('edition-index').scrolled, true);
+  assert.equal(node('newer-issue').disabled, false);
+  node('newer-issue').onclick();
+  assert.equal(node('issue-date').textContent, issue.date + ' · ' + data.timezone);
+  for (let i = 1; i < data.issues.length; i++) node('older-issue').onclick();
+  assert.equal(node('older-issue').disabled, true, 'oldest issue cannot move older');
   console.log('PASS: inline reading, escaping, searching and reset');
 });

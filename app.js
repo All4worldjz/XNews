@@ -11,10 +11,30 @@
     return `<div class="inline-reading"><p class="reading-note">依据下方署名来源独立整理，非逐字全文转载。背景帮助理解；解读为 XNews 观点，不代表原作者结论。</p>${sections}<p class="reading-updated">正文整理更新：<time datetime="${escape(reading.updatedAt)}">${escape(reading.updatedAt)}</time></p></div>`;
   }
   let data, selected;
+  function selectIssue(date) {
+    selected = date;
+    const url = new URL(location.href);
+    url.searchParams.set('date', date);
+    url.hash = 'edition-index';
+    history.pushState({}, '', url);
+    $('search').value = '';
+    $('category').value = 'all';
+    render();
+    $('edition-index').scrollIntoView();
+  }
   function render() {
     const issue = data.issues.find(i => i.date === selected) || data.issues[0];
     if (!issue) { $('articles').innerHTML = '<p class="empty">尚无已发布简报。</p>'; $('result-count').textContent = '0 条'; return; }
     selected = issue.date;
+    const position = data.issues.indexOf(issue);
+    $('newer-issue').disabled = position === 0;
+    $('older-issue').disabled = position === data.issues.length - 1;
+    $('newer-issue').onclick = () => position > 0 && selectIssue(data.issues[position - 1].date);
+    $('older-issue').onclick = () => position < data.issues.length - 1 && selectIssue(data.issues[position + 1].date);
+    $('edition-links').innerHTML = issue.items.map((item, index) => `<li><a href="#${escape(item.id)}" data-jump="${escape(item.id)}"><span class="index-number">${String(index + 1).padStart(2, '0')}</span><span><small>${escape(item.category)}</small><strong>${escape(item.title)}</strong></span><span aria-hidden="true">↗</span></a></li>`).join('');
+    $('edition-links').querySelectorAll('[data-jump]').forEach(link => link.addEventListener('click', () => {
+      if ($('search').value || $('category').value !== 'all') { $('search').value = ''; $('category').value = 'all'; render(); }
+    }));
     $('issue-date').textContent = issue.date + ' · ' + data.timezone;
     $('coverage-text').textContent = issue.coverage;
     $('x-count').textContent = issue.items.filter(i => i.verification === 'verified' && safeUrl(i.xPostUrl)).length;
@@ -37,12 +57,12 @@
       return `<article class="news-card" id="${escape(item.id)}"><div class="card-top"><span class="tag">${escape(item.category)}</span><span class="tag sample-tag">${escape(labels[item.verification] || '待核验')}</span></div><h3>${escape(item.title)}</h3><p class="summary">${escape(item.summary)}</p>${item.article ? `<a class="read-article" href="./articles/${encodeURIComponent(issue.date)}-${encodeURIComponent(item.id)}.html">阅读全文与解读 →</a>` : ""}<div class="date-grid"><span>来源发布 ${escape(item.sourcePublishedDate || '未确认')}</span><span>事件日期 ${escape(item.eventDate || '未确认')}</span><span>核验 ${escape(item.verifiedAt || '未核验')}</span></div>${item.reading ? inlineReading(item.reading) : `<div class="insight"><p>${escape(item.whyItMatters)}</p></div>`}<p class="caveat">${escape(item.caveat)}</p>${sources}<div class="x-status">${xUrl ? `<a href="${escape(xUrl)}" target="_blank" rel="noopener noreferrer">${['x-mirror', 'syndicated-source'].includes(item.verification) ? 'X 原帖链接（未直连核验）' : '查看 X 原帖'} ↗</a> · 互动数据：未获取` : 'X 原帖：未核验 · 互动数据：未获取'}</div></article>`;
     }).join('') : '<p class="empty">没有符合条件的内容。试试其他关键词或「全部主题」。</p>';
     $('archive-list').innerHTML = data.issues.map(i => `<button class="archive-button" data-date="${escape(i.date)}" aria-pressed="${i.date === selected}"><span>${escape(i.date)}</span><span>${i.status === 'sample' ? '样例' : '日报'} · ${i.items.length} 条</span></button>`).join('');
-    $('archive-list').querySelectorAll('button').forEach(button => button.addEventListener('click', () => { selected = button.dataset.date; const url = new URL(location.href); url.searchParams.set('date', selected); history.pushState({}, '', url); $('search').value = ''; $('category').value = 'all'; render(); }));
+    $('archive-list').querySelectorAll('button').forEach(button => button.addEventListener('click', () => { selectIssue(button.dataset.date); }));
   }
   $('search').addEventListener('input', () => data && render());
   $('category').addEventListener('change', () => data && render());
   window.addEventListener('popstate', () => { selected = new URLSearchParams(location.search).get('date'); if (data) render(); });
-  fetch('./data/issues.json?v=inline-reading-v1', {cache: 'no-cache'}).then(r => { if (!r.ok) throw new Error('读取失败'); return r.json(); }).then(value => { if (!Array.isArray(value.issues)) throw new Error('数据格式错误'); data = value; selected = new URLSearchParams(location.search).get('date'); render(); if (location.hash) { const target = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) target.scrollIntoView(); } }).catch(() => { $('result-count').textContent = '内容暂时无法读取'; $('articles').innerHTML = '<p class="empty">未能加载日报数据。请通过本地 HTTP 预览打开，或稍后刷新重试。</p>'; });
+  fetch('./data/issues.json?v=reading-experience-v2', {cache: 'no-cache'}).then(r => { if (!r.ok) throw new Error('读取失败'); return r.json(); }).then(value => { if (!Array.isArray(value.issues)) throw new Error('数据格式错误'); data = value; selected = new URLSearchParams(location.search).get('date'); render(); if (location.hash) { const target = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) target.scrollIntoView(); } }).catch(() => { $('result-count').textContent = '内容暂时无法读取'; $('edition-links').innerHTML = '<li>目录暂时无法读取，请稍后刷新或使用 RSS。</li>'; $('articles').innerHTML = '<p class="empty">未能加载日报数据。请通过本地 HTTP 预览打开，或稍后刷新重试。</p>'; });
 })();
 
 // A normal feed link remains available when clipboard permission is unavailable.

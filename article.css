@@ -4,3 +4,16 @@
 .article-body h3{font-size:20px;line-height:1.6;margin:29px 0 13px;color:#4c3e29}.citation{font-size:12px;vertical-align:super;color:var(--red);text-decoration:underline}.article-sources li:target{background:#e8dfcd;outline:2px solid var(--gold);outline-offset:5px}
 .article-figure{margin:36px -20px;padding:0}.article-figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);background:var(--paper)}.article-figure figcaption{font-size:12px;line-height:1.8;color:var(--muted);margin-top:12px}.article-figure a{display:block}@media(max-width:600px){.article-figure{margin:28px -4px}}@media print{.article-figure{margin:24px 0;break-inside:avoid}}
 .report-table{overflow-x:auto;margin:32px -20px 10px;border:1px solid var(--line)}.report-table table{border-collapse:collapse;width:100%;min-width:660px;font-size:13px;line-height:1.8}.report-table caption{text-align:left;font-family:var(--serif);font-size:23px;font-weight:700;padding:20px;background:#e8dfcd}.report-table th{background:var(--ink);color:var(--paper);font-weight:600;text-align:left}.report-table td,.report-table th{padding:15px;border-bottom:1px solid var(--line);vertical-align:top}.report-table tbody tr:nth-child(even){background:#eae1d0}.table-note{font-size:12px!important;color:var(--muted)}@media(max-width:600px){.report-table{margin:26px -4px 10px}}@media print{.report-table table{min-width:0;font-size:9pt}.table-note{display:none}}
+
+/* Shared editorial reading surface. Content remains generated from canonical data. */
+.article-wrap{max-width:880px;padding-top:46px}
+.article-header h1{color:#243b30}
+.article-deck{color:#4f5b50}
+.article-disclosure{background:#edf1e8;border-color:#8d9b6a}
+.article-toc{background:#edf1e8;padding:24px 28px;border:1px solid var(--line);border-radius:8px;margin-top:28px}
+.article-toc a{line-height:1.8}
+.article-body section{scroll-margin-top:110px}
+.article-body p{line-height:2.05}
+.article-end{flex-wrap:wrap}
+.article-end a{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:6px;min-height:48px;padding:10px 16px;color:var(--red);background:#fffdf8}
+@media(max-width:700px){.article-page .site-header{min-height:104px;gap:0}.article-page .site-header nav{justify-content:flex-start;gap:28px}.article-wrap{padding:28px 22px 44px}.article-header h1{font-size:31px;line-height:1.5;letter-spacing:0}.article-body{font-size:17px}.article-toc{padding:20px}.article-toc ol{columns:1;padding-left:20px}.article-toc a{display:block;padding:4px 0}.article-body section{scroll-margin-top:124px}.article-body h2{font-size:25px}.article-end{gap:10px}.article-end a{font-size:13px;padding:10px 12px}}
