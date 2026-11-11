@@ -111,3 +111,4 @@ footer.wrap{padding-top:24px}
 /* Anchors use scroll-margin once; do not add it to root scroll-padding. */
 html{scroll-padding-top:0}
 @media(max-height:500px){.site-header{position:relative}}
+@media(max-height:500px){[id],.news-card,.article-body section{scroll-margin-top:16px}}
