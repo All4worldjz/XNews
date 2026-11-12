@@ -4,6 +4,237 @@
   "timezone": "UTC",
   "issues": [
     {
+      "date": "2026-11-12",
+      "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-12",
+      "status": "published",
+      "contentFormat": "inline-reading-v1",
+      "coverage": "本期收录 5 条直接核验 X 原帖并与官方资料交叉核对的编辑精选：Databricks Genie 插件、Gemini Decisions API、ElevenLabs 企业语音生态、Qwen4-Max 预览及 Grok Bot 团队协作。采样窗口为北京时间 2026-11-11 08:00 至 2026-11-12 08:00（UTC 2026-11-11T00:00:00Z 至 2026-11-12T00:00:00Z，结束时刻不包含）。原帖公开 HTML 正文和原生时间可读；搜索阅读器的访问限制逐条披露。Grok 官方文章日期与 X 发帖不同，明确保留差异，不称当日首发。编辑抽样不代表完整覆盖 X 或热度排名，不足十条不凑数；每条提供原创中文梳理与独立解读，不发布未经验证的互动量。",
+      "windowStart": "2026-11-11T00:00:00Z",
+      "windowEnd": "2026-11-12T00:00:00Z",
+      "items": [
+        {
+          "id": "databricks-genie-plugins-context",
+          "category": "Enterprise Agentic AI",
+          "title": "Databricks 将 Genie 接入四类助手，企业业务口径开始跨 Agent 复用",
+          "summary": "Databricks 发布面向 ChatGPT、Claude、Microsoft Copilot Cowork 和 Grok Bot 的 Genie 插件，借助业务定义、权限约束与来源引用，为外部 Agent 提供企业上下文。",
+          "whyItMatters": "编辑解读：连接更多数据并不自动带来正确答案；统一指标定义、传递用户权限及可追溯查询，比连接器数量更值得验收。",
+          "caveat": "X 发帖时间为 2026-11-11 21:30:09 UTC（北京时间 11 月 12 日 05:30:09）。原帖与 11 月 11 日 Databricks 官方文章均经普通公开 HTTP 读取；搜索阅读器无法打开官方文章。可用性与权限能力为厂商说明，本次未实际部署插件或验证跨平台权限。文中场景是厂商示例，不是独立验证的客户业绩；不据此推断私有化、当地可用范围或固定价格。",
+          "sourcePublishedDate": "2026-11-11",
+          "sourcePublishedAt": "2026-11-11T21:30:09.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-11",
+          "verifiedAt": "2026-11-12T00:05:45.919031Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/databricks/status/2120630182876741718",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "官方 X 原帖：公开 HTML 正文与原生发布时间已核验",
+              "url": "https://x.com/databricks/status/2120630182876741718",
+              "type": "x-original"
+            },
+            {
+              "label": "Databricks 官方文章：2026-11-11",
+              "url": "https://www.databricks.com/blog/bring-your-business-context-chatgpt-claude-microsoft-copilot-cowork-and-grok-bot",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "同一个“活跃用户”或“收入”指标，在不同部门可能有不同定义。Agent 即使找到真实表格，也可能选错口径。业务上下文层的作用，是把定义、关系和来源一起交给使用数据的工具。"
+            ],
+            "sourceSummary": [
+              "Databricks 在 11 月 11 日的 X 原帖与官方文章中宣布 Genie 插件，原生接入 ChatGPT、Claude、Copilot Cowork 和 Grok Bot；其他兼容客户端可以通过 MCP 服务访问。[1][2]",
+              "官方说明，Genie 使用 Ontology 中的业务定义和关系，查找用户有权访问的数据，生成并执行 SQL，再返回带引用的答案。需要专门分析时，也可把问题转给领域 Genie Agent。[2]",
+              "Agent 既可以把整个业务问题交给 Genie，也可以只索取当前任务缺少的事实，再继续编辑文件或准备材料。支持 MCP Apps 扩展的客户端还可显示交互图表和相关引用。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：平台竞争正在从“连接多少系统”延伸到“谁维护可信业务口径”。企业可以换聊天入口，但仍需要有人对指标定义、数据质量与权限负责。",
+              "试点应使用不同角色查询同一指标，检查行列权限、身份传递、引用和结果一致性。还要区分读数与后续执行权限：能够查到收入，并不意味着可以自动发送客户邮件或调整预算。"
+            ],
+            "updatedAt": "2026-11-12T00:05:45.919031Z"
+          }
+        },
+        {
+          "id": "google-gemini-decisions-api",
+          "category": "Enterprise Agentic AI",
+          "title": "Google 推出 Decisions API：让 Agent 用专用模型做有边界的选择",
+          "summary": "Gemini Decision 1 针对工具选择、模型路由和规则检查等闭集任务输出概率，而非长篇回答；官方标价为每百万输入 token 0.10 美元，不收输出 token 费用。",
+          "whyItMatters": "编辑解读：把频繁的小决策与复杂推理解耦，可能降低运行成本；但模型置信度必须在实际业务样本上校准。",
+          "caveat": "X 原帖发表于 2026-11-11 18:15:51 UTC（北京时间 11 月 12 日 02:15:51），普通公开 HTTP 读取正文和 article:published_time 成功；Google 官方正文标注 11 月 11 日，同样已读。每次最多 1000 个问题与最高 256K 输入为规格；150—250ms 为厂商在最高 16K 上下文等条件下描述的端到端延迟，不能推广至所有 256K 或 1000 题请求。价格、校准和性能为官方口径，未独立复测；Google Cloud 支持仍标为后续推出。",
+          "sourcePublishedDate": "2026-11-11",
+          "sourcePublishedAt": "2026-11-11T18:15:51.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-11",
+          "verifiedAt": "2026-11-12T00:05:45.919031Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/GoogleAIStudio/status/2120581284690801060",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "官方 X 原帖：公开 HTML 正文与原生发布时间已核验",
+              "url": "https://x.com/GoogleAIStudio/status/2120581284690801060",
+              "type": "x-original"
+            },
+            {
+              "label": "Google 官方发布：2026-11-11",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "闭集决策是从预先定义的选项中判断，例如把问题交给哪个模型、是否满足某项规则。它与让模型自由生成文章不同，也不等于模型可以替组织制定政策。"
+            ],
+            "sourceSummary": [
+              "Google 宣布通过 AI Studio 的 Gemini API 提供 Gemini Decision 1。它支持对共享的文字、图片、音频、视频和 PDF 输入，回答是非题、多选一以及有序评分问题，并返回概率或置信度。[1][2]",
+              "官方规格为输入最高 256K token、一次最多 1000 个独立问题。输入按每百万 token 0.10 美元计费，输出不收费；共享输入每次请求计费一次，各问题仍增加指令与选项 token。[2]",
+              "发布文章把工具选择、模型路由和内容规则检查列为用途，给出了受测试条件约束的低延迟结果。官方还表示生态集成正在推出，Google Cloud 支持尚待上线。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：并非每一步都值得调用最强模型生成长答案。对大量重复、选项明确的判断，专门的决策接口值得与现有规则引擎和小模型比较。",
+              "概率不是保证。企业应保留拒绝判断、转交人工和规则兜底的路径，特别是涉及付款、权限和高影响结果的操作。验收要记录误判代价，而不是只看平均延迟。"
+            ],
+            "updatedAt": "2026-11-12T00:05:45.919031Z"
+          }
+        },
+        {
+          "id": "elevenlabs-agents-memory-routines-ecosystem",
+          "category": "Enterprise Agentic AI",
+          "title": "ElevenLabs 将语音 Agent 扩展到记忆、自动跟进和伙伴交付",
+          "summary": "ElevenLabs 在纽约峰会宣布企业模型微调、Interaction Engine、Memory/Routines、ElevenAI 及伙伴生态计划。不同能力处于预告、预览或早期访问阶段，不能一并视为正式可用。",
+          "whyItMatters": "编辑解读：语音交互正在与企业工作流连接；部署成效取决于业务接入、授权和交付能力，而不只是声音是否自然。",
+          "caveat": "X 汇总原帖发表于 2026-11-11 20:17:48 UTC（北京时间 11 月 12 日 04:17:48），公开 HTML 正文及原生时间已核验；官方峰会文章标注 11 月 11 日，正文可读。微调计划为未来数月，Interaction Engine 为预览，ElevenAI 为免费早期访问；Memory/Routines 的具体账号开放范围未实测，不统称 GA。Marketplace 使用既有承诺额采购安排在下一年。厂商案例及收益未独立核验。",
+          "sourcePublishedDate": "2026-11-11",
+          "sourcePublishedAt": "2026-11-11T20:17:48.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-11",
+          "verifiedAt": "2026-11-12T00:06:33.041691Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/ElevenLabs/status/2120611975780602296",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "官方 X 原帖：公开 HTML 正文与原生发布时间已核验",
+              "url": "https://x.com/ElevenLabs/status/2120611975780602296",
+              "type": "x-original"
+            },
+            {
+              "label": "ElevenLabs 官方峰会总结：2026-11-11",
+              "url": "https://elevenlabs.io/blog/nyc-summit",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "一次客户对话的价值往往在挂断以后才兑现：更新记录、安排回访和完成后续工作。把语音识别接入系统，距离可负责的端到端流程仍有权限和错误处理的距离。"
+            ],
+            "sourceSummary": [
+              "ElevenLabs 在峰会汇总中宣布，将在未来数月帮助企业微调部分开源语言模型及其语音模型；预览的 Interaction Engine 负责轮次、打断及不同复杂度任务的模型选择。[1][2]",
+              "Memory 面向已认证的回访客户沉淀对话中的偏好和约束，Routines 面向对话前后的多步骤跟进。ElevenAI 当日开放免费早期访问，用于口述、会议记录及行动项，官方强调会议知情与同意机制。[2]",
+              "新伙伴计划支持顾问、系统集成商等实施，复杂部署可与原厂 FDE 协作。Marketplace 当下帮助发现伙伴应用，使用既有 ElevenLabs 承诺额购买的安排在下一年才推出。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：平台把“对话”延伸到“完成工作”，也就必须承担更复杂的交付约束。企业不宜只采购一个声音效果，而应验证一个具体流程的完成率、人工接管、错误成本和单位任务总费用。",
+              "记忆应允许纠正、删除和限制用途；主动回访应有明确的用户许可。伙伴实施还要约定接口故障、业务误判和升级后的责任，避免上线后出现原厂、伙伴和客户相互推诿。"
+            ],
+            "updatedAt": "2026-11-12T00:06:33.041691Z"
+          }
+        },
+        {
+          "id": "qwen4-max-preview-window",
+          "category": "模型与研究",
+          "title": "Qwen4-Max 开放限期预览，企业试用需留意接口与下线安排",
+          "summary": "阿里开放 Qwen4-Max 预览，支持多模态理解、工具调用和结构化输出。当前仅通过 Token Plan 接入，预览期结束后该版本下线，不等于长期生产版本。",
+          "whyItMatters": "编辑解读：新模型值得测试，但预览生命周期、思考预算与历史消息格式会直接影响应用迁移和运行稳定性。",
+          "caveat": "X 原帖发表于 2026-11-11 02:01:09 UTC（北京时间 10:01:09）；普通公开 HTTP 成功读取完整正文和原生发布时间，搜索阅读器直连返回 403。阿里云官方文档正文已读，未显示可用的更新时间，文内明确预览开始日为 11 月 11 日。预览窗口截至 11 月 25 日 24:00 UTC+8，不能误读为当天 00:00。性能提升是厂商定位，尚无本次独立测试；不代表开放权重或可私有化部署。",
+          "sourcePublishedDate": "2026-11-11",
+          "sourcePublishedAt": "2026-11-11T02:01:09.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": "2026-11-11",
+          "verifiedAt": "2026-11-12T00:05:45.919031Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/Alibaba_Qwen/status/2120335993643684315",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "官方 X 原帖：公开 HTML 正文与原生发布时间已核验",
+              "url": "https://x.com/Alibaba_Qwen/status/2120335993643684315",
+              "type": "x-original"
+            },
+            {
+              "label": "阿里云百炼官方文档：Qwen4-Max-Preview",
+              "url": "https://help.aliyun.com/zh/model-studio/qwen4-max-preview",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "预览版通常用于验证新能力，其接口、配额和存续时间不能自动等同于正式生产服务。企业试用时应保留模型替换与回退路径。"
+            ],
+            "sourceSummary": [
+              "Qwen 官方 X 宣布 Qwen4-Max 进入预览，并列出 Token Plan、QwenWork、Qoder、Qwen APP 和 QwenStudio 等体验入口。[1]",
+              "阿里云文档确认模型支持文字、图片和视频输入，以及联网搜索、工具调用和结构化输出。API 兼容 OpenAI 与 Anthropic 协议；当前仅支持 Token Plan，不支持按量计费。预览从北京时间 11 月 11 日 10:00 至 11 月 25 日 24:00，结束后下线。[2]",
+              "迁移时需注意输出上限同时包含思考与最终回答的 token。文档还要求在相关多轮模式中保留并按指定字段回传思考内容；沿用旧参数和消息结构可能造成提前截断或兼容问题。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：这条新闻的采购价值不只在模型代际名称，更在于它是否能以可接受成本完成真实任务。可选代码修改、文档抽取和工具调用三个任务集，与现用模型做同口径测试。",
+              "将预览模型接到核心流程之前，应确认下线日期、服务额度、失败处理和替代模型。先用脱敏样本验证，不因支持某种 API 协议就假定所有参数行为完全相同。"
+            ],
+            "updatedAt": "2026-11-12T00:05:45.919031Z"
+          }
+        },
+        {
+          "id": "grok-bot-team-announcement",
+          "category": "Enterprise Agentic AI",
+          "title": "Grok Bot 在 X 介绍 1.0 团队协作能力，官方文章日期存在差异",
+          "summary": "Grok Bot 的当日 X 公告强调共享 Bot、Slack/Teams 协作和参与会议。官方文章同时介绍主动跟进、团队记忆与权限保护，但其标注日期早于本次 X 发帖。",
+          "whyItMatters": "编辑解读：共享智能体扩大了协作范围，也增加信息跨人传播、长期记忆和操作授权的治理需求。",
+          "caveat": "X 原帖发表于 2026-11-11 18:22:30 UTC（北京时间 11 月 12 日 02:22:30），公开 HTML 正文及时间已读。x.ai 官方文章公开正文与结构化日期均为 2026-11-02，早于原帖；本条记录 11 月 11 日的 X 介绍，不将其认定为当日首次上线，实际首次可用日未进一步确认。文章的可靠性提升及学习能力属于厂商表述，未独立测试；套餐与管理员开关限制仍适用。",
+          "sourcePublishedDate": "2026-11-11",
+          "sourcePublishedAt": "2026-11-11T18:22:30.000Z",
+          "timestampBasis": "x_original_html_publication_metadata",
+          "eventDate": null,
+          "verifiedAt": "2026-11-12T00:05:45.919031Z",
+          "verification": "verified",
+          "xPostUrl": "https://x.com/bot/status/2120582957782200586",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "官方 X 原帖：公开 HTML 正文与原生发布时间已核验",
+              "url": "https://x.com/bot/status/2120582957782200586",
+              "type": "x-original"
+            },
+            {
+              "label": "x.ai 官方介绍：页面与元数据标注 2026-11-02，与 X 日期不同",
+              "url": "https://x.ai/news/grok-bot-1-0",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "个人助理主要处理一个人的任务；共享给团队后，同一智能体可能接触不同人的资料、意见和权限。记住信息与获准向其他人披露信息，是两项不同的能力。"
+            ],
+            "sourceSummary": [
+              "Grok Bot 当日 X 原帖介绍 1.0，强调可以共享 Bot，在 Slack 和 Microsoft Teams 中协作，并邀请其参加会议。[1]",
+              "官方文章描述了主动跟进未完成任务、记住团队决策及改进工作方法等能力，也称 Bot 会尊重个人权限、对敏感操作询问，并检查信息是否适合公开渠道。[2]",
+              "官方列明 Team Bots 适用于 Team 和 Enterprise 套餐，会议能力适用于 Team、Enterprise 和 Ultra；Enterprise 管理员需要在设置中开启会议。该文章日期为 11 月 2 日，与原帖不同，因此不能据此统一认定首次发布时间。[2]"
+            ],
+            "commentary": [
+              "XNews 的判断：团队智能体的核心难题是授权随人、随场景变化。企业试点可专门设计反例：某人私聊提供的信息，是否会被不恰当地带进群聊或会议。",
+              "主动性也需要边界。提醒遗漏和准备草稿可以先行，发送、采购或变更系统则应有明确权限和可追溯记录。应分别验收记忆质量、权限隔离和实际任务完成率，而不是只体验演示流程。"
+            ],
+            "updatedAt": "2026-11-12T00:05:45.919031Z"
+          }
+        }
+      ],
+      "trends": {
+        "status": "unavailable",
+        "reason": "数据不足：仅完成公开网页编辑抽样，没有固定账号或话题全集，也没有同口径、跨时间点的可靠互动计数。无法计算可比较增长率，不以单时点互动、聚合站榜位或编辑顺序替代热点涨速 Top 10。",
+        "items": []
+      }
+    },
+    {
       "date": "2026-11-11",
       "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-11",
       "status": "published",
