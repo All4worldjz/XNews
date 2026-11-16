@@ -4,6 +4,111 @@
   "timezone": "UTC",
   "issues": [
     {
+      "date": "2026-11-16",
+      "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-16",
+      "status": "published",
+      "contentFormat": "inline-reading-v1",
+      "coverage": "本期收录 2 条可通过公开镜像读取并与作者或项目原始资料核对的 X 动态：shadcn 对生成式界面行为约束的设计说明、Sebastian Raschka 的位置编码教程。采样窗口为北京时间 11 月 15 日 08:00 至 11 月 16 日 08:00（UTC 11 月 15 日 00:00 至 11 月 16 日 00:00，结束时刻不包含）。两条 X 原帖直连均返回 403，已读取对应公开镜像；镜像不保证持续可访问。UI SDK 首发于 11 月 12 日，本期报道的是作者在窗口内的新说明，不是再次发布。编辑抽样不代表完整覆盖 X；不足十条不补位。",
+      "windowStart": "2026-11-15T00:00:00Z",
+      "windowEnd": "2026-11-16T00:00:00Z",
+      "items": [
+        {
+          "id": "shadcn-generative-ui-behaviors",
+          "category": "Enterprise Agentic AI",
+          "title": "shadcn 谈生成式界面：样式可以不同，交互规则要一致",
+          "summary": "shadcn 用日期选择举例：智能体可为同一任务生成日历或输入框，但底层应该遵守相同的交互约束。这是对 11 月 12 日 UI SDK 测试版的设计说明，不是新版本。",
+          "whyItMatters": "企业引入动态界面可以先允许布局变化，再用同一套行为测试约束页面；权限、业务规则和关键提交仍应由应用或服务端可靠执行。",
+          "caveat": "X 原站 403；采样时读到公开镜像正文与分钟级 UTC 时间，秒与毫秒由状态 ID 推算。项目文档可读；未安装或测试 SDK，未独立验证无障碍表现。当前项目标为 beta。",
+          "sourcePublishedDate": "2026-11-15",
+          "sourcePublishedAt": "2026-11-15T01:33:44.832Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-12",
+          "verifiedAt": "2026-11-16T00:08:27Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/shadcn/status/2121778646956343344",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "shadcn 的 X 原帖公开镜像",
+              "url": "https://www.teapawt.org/shadcn/status/2121778646956343344",
+              "type": "mirror"
+            },
+            {
+              "label": "UI SDK 官方文档：11 月 12 日发布说明",
+              "url": "https://ui-sdk.dev/docs/core/changelog/introducing-ui-sdk",
+              "type": "official"
+            },
+            {
+              "label": "Vercel Labs UI SDK 源码仓库",
+              "url": "https://github.com/vercel-labs/ui",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "生成式界面让智能体按当前任务生成控件。比如填写日期时，有人更适合直接输入，有人更适合翻日历。真正影响能否交付的，不只是界面长什么样，而是它是否会把同一个日期准确地交给业务系统。"
+            ],
+            "sourceSummary": [
+              "11 月 15 日 01:33 UTC，shadcn 以日期选择说明，智能体可以生成不同界面，底层行为保证则不应随界面改变，并把这一点明确为 UI SDK 的设计目标。[1]",
+              "UI SDK 官方文档的首次发布说明日期是 11 月 12 日。文档介绍了可组合的 TypeScript 交互模块，如键盘导航、焦点管理、选择状态、弹窗及 ARIA 语义；主库仍标测试版。本期没有把作者解释当成新版本，也没有把文档宣称当成验收结果。[2][3]"
+            ],
+            "commentary": [
+              "对于企业，建议先在低风险、可回退的界面上试。所有界面变体用同一组键盘、读屏、校验、错误恢复和确认流程测试；不要用截图相似度作为行为一致的替代品。",
+              "即使界面框架复用了交互规则，也不等于业务安全已解决。日期格式、时区、授权、重要提交和撤销仍要在业务层明确定义并验证，不能交给模型临场决定。"
+            ],
+            "updatedAt": "2026-11-16T00:08:27Z"
+          }
+        },
+        {
+          "id": "raschka-positional-embeddings",
+          "category": "技术解读",
+          "title": "Raschka 用 PyTorch 拆解 RoPE，解释模型如何处理词元顺序",
+          "summary": "Sebastian Raschka 发布带图解和代码的位置编码教程，解释经典 RoPE、部分 RoPE、部分层不显式编码位置（NoPE）和相对位置偏置。文章是技术教程，不是模型发布或上下文性能评测。",
+          "whyItMatters": "长链工具任务看的是早期指令、工具返回和状态能否被正确使用，不是单看模型宣称的上下文长度。",
+          "caveat": "X 原站 403；采样时公开镜像和作者原文可读，镜像显示分钟级 UTC 时间，秒与毫秒由状态 ID 推算。架构观察基于作者选取的开放权重模型，并非行业全面样本；本文未复跑教程代码。",
+          "sourcePublishedDate": "2026-11-15",
+          "sourcePublishedAt": "2026-11-15T13:29:04.714Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-15",
+          "verifiedAt": "2026-11-16T00:04:00Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/rasbt/status/2121958665989083253",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "Sebastian Raschka 的 X 原帖公开镜像",
+              "url": "https://www.teapawt.org/rasbt/status/2121958665989083253",
+              "type": "mirror"
+            },
+            {
+              "label": "Sebastian Raschka 原始技术教程与 PyTorch 示例",
+              "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "同样的几个词，换个顺序就可能改变含义。位置编码帮助模型在计算注意力时感知这个差异。一个企业智能体往往要读长文档并多次调用工具，前面说过的限制和刚取得的结果都需要在后续正确使用。"
+            ],
+            "sourceSummary": [
+              "11 月 15 日 13:29 UTC，Raschka 在 X 介绍同日公开的教程。原文用图解和 PyTorch 代码解释 RoPE：在计算注意力时，根据位置旋转查询和键向量，不旋转值向量，使注意力能够利用相对位置信息。[1][2]",
+              "文章也比较了只旋转部分维度、在部分层省略显式位置编码、以及把相对位置偏置加入注意力分数等做法。作者按自己整理的开放权重模型样本讨论架构分布；这不是长上下文性能对照，也不能外推到所有模型。[2]"
+            ],
+            "commentary": [
+              "企业选型不要从 RoPE 的变体直接推断任务质量或显存成本。减少旋转维数，不自动意味着保存历史键和值的 KV 缓存就变小；实际显存还要看具体模型和推理实现。",
+              "建议用真实的多轮工具链评测：把关键限制和回执放在不同位置，同时记录任务完成率、限制遗漏、缓存显存和尾延迟。对比结果比纸面上下文上限更能帮助选型。"
+            ],
+            "updatedAt": "2026-11-16T00:08:27Z"
+          }
+        }
+      ],
+      "trends": {
+        "status": "unavailable",
+        "reason": "没有覆盖范围、指标和采样方式一致的跨时间点量化数据。零散镜像快照不能计算 X 热度增速，不发布排名或互动数字。",
+        "items": []
+      }
+    },
+    {
       "date": "2026-11-15",
       "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-15",
       "status": "published",
