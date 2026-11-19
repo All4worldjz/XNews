@@ -4,6 +4,187 @@
   "timezone": "UTC",
   "issues": [
     {
+      "date": "2026-11-19",
+      "title": "AI 与企业级智能体日报｜2026 年 11 月 19 日",
+      "status": "published",
+      "contentFormat": "inline-reading-v1",
+      "coverage": "北京时间 11 月 18 日 08:00 至 11 月 19 日 08:00。仅收录可交叉核对的 X 帖文及一手资料，不代表全平台覆盖。",
+      "windowStart": "2026-11-18T00:00:00Z",
+      "windowEnd": "2026-11-19T00:00:00Z",
+      "items": [
+        {
+          "id": "gemini-4-neon",
+          "category": "Enterprise Agentic AI",
+          "title": "Gemini 4 Neon 发布：应评估模型分工之后的任务总成本",
+          "summary": "Google 发布介于 Carbon 和 Hydrogen 之间的 Neon，标称 100 万 token 上下文，面向长程工具任务和并行子智能体。",
+          "whyItMatters": "模型采购可以按任务角色分工，而不只是按输入难度选一个模型。",
+          "caveat": "官方基准尚未独立复现。付费 API 可用不等于所有地区、所有入口都可用，也不证明支持政务内网私有部署。 X 内容据公开镜像核对；镜像在复查时可能不可访问，全文梳理以第一手资料为准。",
+          "sourcePublishedDate": "2026-11-18",
+          "sourcePublishedAt": "2026-11-18T21:34:04.852Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-18",
+          "verifiedAt": "2026-11-19T00:05:59Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/GoogleDeepMind/status/2123167884411077030",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "X 原帖的公开镜像（访问可能不稳定）",
+              "url": "https://teapaw.org/GoogleDeepMind/status/2123167884411077030",
+              "type": "mirror"
+            },
+            {
+              "label": "一手发布或模型卡",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "发布说明强调 Neon 调度更轻量的 Hydrogen 子智能体，并配合上下文压缩与四档 thinking。"
+            ],
+            "sourceSummary": [
+              "X 发帖时间：11 月 18 日 21:34 UTC。API 报价每百万 token：输入 3 美元、缓存输入 0.15 美元、输出 15 美元。Google 自报 SWE-sweep 在 mini-SWE harness 为 12.8%，在 Antigravity 为 39.0%；整套运行环境不同，不能把差值全归给单一功能。"
+            ],
+            "commentary": [
+              "试点可用强模型做规划、终审，快模型做有边界的检索和执行。把重复读取、协调、工具调用、失败重试和人工复核一并计入每个合格任务成本，并检查父子智能体权限是否被意外放大。"
+            ],
+            "updatedAt": "2026-11-19T00:05:59Z"
+          }
+        },
+        {
+          "id": "openai-research-jagged-frontier",
+          "category": "Enterprise Agentic AI",
+          "title": "OpenAI 研究现场：智能体擅长监控，不等于擅长改生产代码",
+          "summary": "OpenAI 内部追踪估计，2–4 小时研究任务的无人工介入成功率从 3 月 23% 升到 10 月 46%；按任务拆分，监控训练 79%，编写推理与服务栈代码 25%。",
+          "whyItMatters": "企业应按任务分配自主权和复核预算，不能拿总体成功率当上线依据。",
+          "caveat": "数据来自 OpenAI 内部，任务组合随采用变化，不是随机因果试验；以 API 标价折算的费用不是实际支出，也不是企业预算基准。 X 内容据公开镜像核对；镜像在复查时可能不可访问，全文梳理以第一手资料为准。",
+          "sourcePublishedDate": "2026-11-18",
+          "sourcePublishedAt": "2026-11-18T23:07:23.295Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-18",
+          "verifiedAt": "2026-11-19T00:05:59Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/OpenAI/status/2123191365983248653",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "X 原帖的公开镜像（访问可能不稳定）",
+              "url": "https://teapaw.org/OpenAI/status/2123191365983248653",
+              "type": "mirror"
+            },
+            {
+              "label": "一手发布或模型卡",
+              "url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "报告按投入、过程、产出区分指标，分别观察内部编码智能体使用、研究流程和研发结果。"
+            ],
+            "sourceSummary": [
+              "X 发帖时间：11 月 18 日 23:07 UTC。4–8 小时任务的估计无干预成功率由 13% 升至 35%；启动训练约 35%。10 月按 API 标价折算，中位研究人员日均用量价值约 2,400 美元，第 90 百分位约 23,000 美元。数据说明并行使用与工具价值在增加，不证明总体研发净收益同比例上升。"
+            ],
+            "commentary": [
+              "试点先把可逆、能自动核验的任务交给 Agent，例如日志摘要与异常证据汇总；生产环境改动另设审批和回滚。按任务分别记录无干预成功率、复核分钟数、失败重做成本和总周期，避免只报任务数。"
+            ],
+            "updatedAt": "2026-11-19T00:05:59Z"
+          }
+        },
+        {
+          "id": "openai-chip-design-eda",
+          "category": "AI Engineering",
+          "title": "OpenAI 披露 AI 辅助芯片设计：模块级改进须经 EDA 验证",
+          "summary": "OpenAI 称 Jalapeño 向量与矩阵单元的标准单元面积分别约降 13% 和 10%，两处经过硅片验证；AMD 项目披露的是特定 GPU IP 相对优化基线的 PPA 改进。",
+          "whyItMatters": "真正可复用的是用工程工具验证候选设计，而非让模型自行签核。",
+          "caveat": "Jalapeño 的模块级比例不能外推整片；AMD 披露的最高 14% 不是全芯片统一提升，部分改动送制造也不等于硅后实测。 X 内容据公开镜像核对；镜像在复查时可能不可访问，全文梳理以第一手资料为准。",
+          "sourcePublishedDate": "2026-11-18",
+          "sourcePublishedAt": "2026-11-18T17:05:52.129Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-18",
+          "verifiedAt": "2026-11-19T00:05:59Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/OpenAI/status/2123100386638877054",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "X 原帖的公开镜像（访问可能不稳定）",
+              "url": "https://teapaw.org/OpenAI/status/2123100386638877054",
+              "type": "mirror"
+            },
+            {
+              "label": "一手发布或模型卡",
+              "url": "https://openai.com/index/advancing-chip-design-with-our-models/",
+              "type": "official"
+            },
+            {
+              "label": "Synopsys 关于合作模型的公告",
+              "url": "https://investor.synopsys.com/news/news-details/2026/OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design/default.aspx",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "PPA 指功耗、性能与面积。模型改写描述硬件逻辑的 RTL，工程工具对改写做功能等价检查并评估取舍。"
+            ],
+            "sourceSummary": [
+              "X 发帖时间：11 月 18 日 17:05 UTC。报告另基于 PicoRV32 与 Ibex 做了 9,881 次跨任务、核心和预算的评测。从规格重做有时比改旧设计得分高，但可省略部分原功能，评测用的是仿真与估算时钟，条件比量产验收宽。"
+            ],
+            "commentary": [
+              "工业 FDE 可借鉴这一流程：选有明确约束、可机器判定的工作项，先做候选与验证闭环；把兼容、边界工况、失败回退和最终签核交给现有工程系统与负责人。"
+            ],
+            "updatedAt": "2026-11-19T00:05:59Z"
+          }
+        },
+        {
+          "id": "qwen38-opencode-lora",
+          "category": "Enterprise Agentic AI",
+          "title": "OpenCode 专用 Qwen LoRA：运行框架适配值得验证，不能只看省 Token",
+          "summary": "研究者公开 Qwen3.8-27B 的 OpenCode 适配器和评测，将同一运行框架下的模型配置做了对照。",
+          "whyItMatters": "私有部署可将模型与运行框架作为联合选型对象，比较每个通过验收任务的成本。",
+          "caveat": "6–8 倍 Token 差是无显式 thinking 的适配器对比 xhigh 基座，不是同推理档位。作者没有复测 GGUF，量化交付表现未知。 X 内容据公开镜像核对；镜像在复查时可能不可访问，全文梳理以第一手资料为准。",
+          "sourcePublishedDate": "2026-11-18",
+          "sourcePublishedAt": "2026-11-18T13:18:52.802Z",
+          "timestampBasis": "snowflake_id_derived",
+          "eventDate": "2026-11-18",
+          "verifiedAt": "2026-11-19T00:05:59Z",
+          "verification": "x-mirror",
+          "xPostUrl": "https://x.com/yb2698/status/2123043263041155473",
+          "engagement": null,
+          "sources": [
+            {
+              "label": "X 原帖的公开镜像（访问可能不稳定）",
+              "url": "https://teapaw.org/yb2698/status/2123043263041155473",
+              "type": "mirror"
+            },
+            {
+              "label": "一手发布或模型卡",
+              "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-opencode-adapted",
+              "type": "official"
+            }
+          ],
+          "reading": {
+            "background": [
+              "适配器用低秩微调改变模型行为；即使底模相同，工具协议、提示、反馈和上下文处理的差异也会改变任务结果。"
+            ],
+            "sourceSummary": [
+              "X 发帖时间：11 月 18 日 13:18 UTC。作者报告的 Terminal-Bench 总体差异 p=.38，SWE-bench 差异 p=.057；未用于选检查点的 66 个 Terminal-Bench 任务从 45.5% 到 59.1%，p=.035。这是特定留出子集结果，不证明所有环境可复制。"
+            ],
+            "commentary": [
+              "试点至少设置同档位基座、适配器和代表性强模型三组，固定工具权限、任务及验收；记录正确性、延迟、显存、重试和人审工时，再决定是否投入国产硬件适配。"
+            ],
+            "updatedAt": "2026-11-19T00:05:59Z"
+          }
+        }
+      ],
+      "trends": {
+        "status": "unavailable",
+        "reason": "缺少同一采样范围与指标下的可比互动时间序列，无法计算 X 热度增速。",
+        "items": []
+      }
+    },
+    {
       "date": "2026-11-17",
       "title": "XNews · AI 与 Enterprise Agentic AI｜2026-11-17",
       "status": "published",
