@@ -28,11 +28,41 @@ class ValidationTests(unittest.TestCase):
         d['issues'][0].pop('trends', None)
         with self.assertRaises(ValueError): validate_data(d)
     def test_syndicated_source_requires_republication_evidence(self):
-        d=copy.deepcopy(self.data);item=next(i for i in d['issues'][0]['items'] if i.get('xPostUrl'));item['verification']='syndicated-source'
-        item['sources'].append({'label':'Signed republication','url':'https://example.org/article','type':'republication'})
-        validate_data(d)
-        item['sources']=[s for s in item['sources'] if s['type']!='republication']
-        with self.assertRaises(ValueError):validate_data(d)
+        # The newest published issue can be an executive-only brief, with no X posts.
+        # This evidence rule should not depend on whichever issue was published last.
+        item = {
+            'id': 'republication-fixture',
+            'title': 'Syndicated article',
+            'summary': 'Summary',
+            'whyItMatters': 'Context',
+            'caveat': 'X post not fetched directly',
+            'category': 'AI',
+            'verification': 'syndicated-source',
+            'xPostUrl': 'https://x.com/example/status/123',
+            'verifiedAt': '2026-01-01T12:00:00Z',
+            'sourcePublishedDate': '2026-01-01',
+            'sources': [{'label': 'Author page', 'url': 'https://example.org/author', 'type': 'official'}],
+        }
+        data = {
+            'schemaVersion': 1,
+            'timezone': 'UTC',
+            'mode': 'published',
+            'issues': [{
+                'date': '2026-01-01',
+                'status': 'published',
+                'coverage': 'Syndicated evidence fixture',
+                'trends': {'status': 'unavailable', 'reason': 'No baseline', 'items': []},
+                'items': [item],
+            }],
+        }
+        with self.assertRaisesRegex(ValueError, 'Republication source must be disclosed'):
+            validate_data(data)
+        item['sources'].append({
+            'label': 'Signed republication',
+            'url': 'https://example.org/article',
+            'type': 'republication',
+        })
+        validate_data(data)
     def test_rejects_out_of_range_visual_placement(self):
         d=copy.deepcopy(self.data);item=d['issues'][0]['items'][0]
         item['article']={'sections':[{'heading':'Main','paragraphs':['Context']}]}
